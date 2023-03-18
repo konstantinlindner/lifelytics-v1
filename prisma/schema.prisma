@@ -36,8 +36,7 @@ model User {
   flagged_message               String
   last_login_at                 DateTime              @db.Timestamptz() // does something need to go inside brackets?
   // add last login_ip
-  all_known_ips                 IpAddress             @relation(fields: [all_known_ips_id], references: [id])
-  all_known_ips_id              String[]
+  // add all_known_ips                 
   failed_login_attempts         Int
   role                          Role                  @relation(fields: [role_id], references: [id])
   role_id                       String
@@ -72,6 +71,7 @@ model User {
   TransactionPlace              TransactionPlace[]
   Region                        Region?               @relation(fields: [regionId], references: [id])
   regionId                      String?
+  IpAddress                     IpAddress             @relation(fields: [ipAddressId], references: [id])
 }
 
 model Role {
