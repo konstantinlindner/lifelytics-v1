@@ -37,10 +37,10 @@ model User {
   failed_login_attempts         Int
   role                          Role                  @relation(fields: [role_id], references: [id])
   role_id                       String
-  location                      Territory             @relation(fields: [location_id], references: [id])
+  location                      String // look at this one
   location_id                   String
-  cities_visited                City[] // need to add relation
-  selected_currencies           Currency[] // need to add relation
+  // add  cities_visited
+  // add  selected_currencies
   transactions                  Transaction[]
   transaction_items_created     TransactionItem[]
   payment_methods_created       PaymentMethod[]
@@ -93,10 +93,10 @@ model Transaction {
   created_at         DateTime                 @default(now())
   updated_at         DateTime                 @updatedAt
   transaction_date   DateTime                 @db.Date
-  amount             Decimal                  @db.Money
+  amount             Decimal                  @db.Decimal() // should it have brackets?
   currency           Currency                 @relation(fields: [currencyId], references: [id]) // add relation
-  split_cost         Int                      @db.SmallInt
-  split_cost_users   User[]
+  split_cost         Int
+  // add split_cost_users
   item               TransactionItem          @relation(fields: [transactionItemId], references: [id])
   place              TransactionPlace         @relation(fields: [transactionPlaceId], references: [id])
   sub_category       TransactionSubCategory[]
@@ -133,7 +133,7 @@ model TransactionPlace {
   id                       String                   @id @default(cuid())
   name                     String
   created_by               User                     @relation(fields: [created_by_id], references: [id])
-  created_by_id            Int
+  created_by_id            String
   global                   Boolean
   flagged                  Boolean
   flagged_message          String
@@ -148,7 +148,7 @@ model TransactionItem {
   id                String             @id @default(cuid())
   name              String
   created_by        User               @relation(fields: [created_by_id], references: [id])
-  created_by_id     Int
+  created_by_id     String
   global            Boolean
   flagged           Boolean
   flagged_message   String
@@ -164,7 +164,7 @@ model PaymentMethod {
   currency                         Currency          @relation(fields: [currencyId], references: [id])
   foreign_currency_conversion_rate Decimal           @db.Decimal()
   created_by                       User              @relation(fields: [created_by_id], references: [id])
-  created_by_id                    Int
+  created_by_id                    String
   global                           Boolean
   Transaction                      Transaction[]
   paymentMethodTypeId              String
@@ -180,37 +180,37 @@ model PaymentMethodType {
 // flights
 
 model FlightTrip {
-  id                String             @id @default(cuid())
-  name              String
-  departure_airport Airport            @relation(fields: [airportId], references: [id])
-  arrival_airport   Airport            @relation(fields: [airportId], references: [id])
-  flights           IndividualFlight[]
-  transaction       Transaction        @relation(fields: [transactionId], references: [id])
-  owner             User               @relation(fields: [owner_id], references: [id])
-  owner_id          Int
-  airportId         String
-  transactionId     String
+  id              String             @id @default(cuid())
+  name            String
+  // add departure_airport
+  arrival_airport Airport            @relation(fields: [airportId], references: [id])
+  flights         IndividualFlight[]
+  transaction     Transaction        @relation(fields: [transactionId], references: [id])
+  owner           User               @relation(fields: [owner_id], references: [id])
+  owner_id        String
+  airportId       String
+  transactionId   String
 }
 
 model IndividualFlight {
-  id                String     @id @default(cuid())
-  trip              FlightTrip @relation(fields: [trip_id], references: [id])
-  trip_id           Int
-  departure_time    DateTime   @db.Timestamptz()
-  arrival_time      DateTime   @db.Timestamptz()
-  airline           Airline    @relation(fields: [airlineId], references: [id])
-  departure_airport Airport    @relation(fields: [airportId], references: [id])
-  arrival_airport   Airport    @relation(fields: [airportId], references: [id])
-  flight_number     String
-  seat              String
-  order             Int
-  airlineId         String
-  airportId         String
+  id              String     @id @default(cuid())
+  trip            FlightTrip @relation(fields: [trip_id], references: [id])
+  trip_id         String
+  departure_time  DateTime   @db.Timestamptz()
+  arrival_time    DateTime   @db.Timestamptz()
+  airline         Airline    @relation(fields: [airlineId], references: [id])
+  // add departure_airport 
+  arrival_airport Airport    @relation(fields: [airportId], references: [id])
+  flight_number   String
+  seat            String
+  order           Int
+  airlineId       String
+  airportId       String
 }
 
 model Airline {
   created_by        User               @relation(fields: [created_by_id], references: [id])
-  created_by_id     Int
+  created_by_id     String
   global            Boolean
   id                String             @id @default(cuid())
   airline           String
@@ -225,7 +225,7 @@ model Airline {
 
 model AirlineAlliance {
   created_by      User      @relation(fields: [created_by_id], references: [id])
-  created_by_id   Int
+  created_by_id   String
   global          Boolean
   id              String    @id @default(cuid())
   alliance        String
@@ -244,7 +244,7 @@ model Accommodation {
   check_in             DateTime           @db.Date
   check_out            DateTime           @db.Date
   owner                User               @relation(fields: [owner_id], references: [id])
-  owner_id             Int
+  owner_id             String
   transaction          Transaction        @relation(fields: [transactionId], references: [id])
   accommodationPlaceId String
   accommodationTypeId  String
@@ -257,7 +257,7 @@ model AccommodationPlace {
   city                City              @relation(fields: [cityId], references: [id])
   name                String
   created_by          User              @relation(fields: [created_by_id], references: [id])
-  created_by_id       Int
+  created_by_id       String
   global              Boolean
   Accommodation       Accommodation[]
   accommodationTypeId String
@@ -268,7 +268,7 @@ model AccommodationType {
   id                 String               @id @default(cuid())
   name               String
   created_by         User                 @relation(fields: [created_by_id], references: [id])
-  created_by_id      Int
+  created_by_id      String
   global             Boolean
   Accommodation      Accommodation[]
   AccommodationPlace AccommodationPlace[]
@@ -284,7 +284,7 @@ model Transportation {
   date                 DateTime           @db.Date
   type                 TransportationType @relation(fields: [transportationTypeId], references: [id])
   owner                User               @relation(fields: [owner_id], references: [id])
-  owner_id             Int
+  owner_id             String
   transaction          Transaction        @relation(fields: [transactionId], references: [id])
   transportationTypeId String
   transactionId        String
@@ -294,7 +294,7 @@ model TransportationType {
   id             String           @id @default(cuid())
   name           String
   created_by     User             @relation(fields: [created_by_id], references: [id])
-  created_by_id  Int
+  created_by_id  String
   global         Boolean
   Transportation Transportation[]
 }
@@ -306,7 +306,7 @@ model Meal {
   created_at     DateTime     @default(now())
   date           DateTime     @db.Date
   owner          User         @relation(fields: [owner_id], references: [id])
-  owner_id       Int
+  owner_id       String
   from           MealPlace    @relation(fields: [mealPlaceId], references: [id])
   category       MealCategory @relation(fields: [mealCategoryId], references: [id])
   transaction    Transaction  @relation(fields: [transactionId], references: [id])
@@ -323,7 +323,7 @@ model MealCategory {
   id            String     @id @default(cuid())
   name          String
   created_by    User       @relation(fields: [created_by_id], references: [id])
-  created_by_id Int
+  created_by_id String
   created_at    DateTime   @default(now())
   updated_at    DateTime   @updatedAt
   global        Boolean
@@ -336,7 +336,7 @@ model MealPlace {
   id                 String           @id @default(cuid())
   name               TransactionPlace @relation(fields: [transactionPlaceId], references: [id])
   created_by         User             @relation(fields: [created_by_id], references: [id])
-  created_by_id      Int
+  created_by_id      String
   global             Boolean
   type               MealPlaceType    @relation(fields: [type_id], references: [id])
   type_id            String
@@ -349,7 +349,7 @@ model MealPlaceType {
   id            String      @id @default(cuid())
   name          String
   created_by    User        @relation(fields: [created_by_id], references: [id])
-  created_by_id Int
+  created_by_id String
   global        Boolean
   MealPlace     MealPlace[]
 }
@@ -358,15 +358,14 @@ model MealPlaceType {
 
 model Currency {
   created_by      User            @relation(fields: [created_by_id], references: [id])
-  created_by_id   Int
+  created_by_id   String
   created_at      DateTime        @default(now())
   updated_at      DateTime        @updatedAt
   global          Boolean
   id              String          @id @default(cuid())
   name            String
   ticker          String
-  countries       Territory[]     @relation(fields: [countries_id], references: [id])
-  countries_id    String
+  // territories 
   flagged         Boolean
   flagged_message String
   Transaction     Transaction[]
@@ -390,7 +389,7 @@ model Region {
 
 model Territory {
   created_by      User      @relation(fields: [created_by_id], references: [id])
-  created_by_id   Int
+  created_by_id   String
   created_at      DateTime  @default(now())
   updated_at      DateTime  @updatedAt
   global          Boolean
@@ -405,8 +404,6 @@ model Territory {
   region          Region    @relation(fields: [region_id], references: [id])
   region_id       String
   Airline         Airline[]
-  Currency        Currency? @relation(fields: [currencyId], references: [id])
-  currencyId      String?
   Language        Language? @relation(fields: [languageId], references: [id])
   languageId      String?
 }
@@ -418,7 +415,7 @@ model TerritoryType {
 
 model City {
   created_by         User                 @relation(fields: [created_by_id], references: [id])
-  created_by_id      Int
+  created_by_id      String
   created_at         DateTime             @default(now())
   updated_at         DateTime             @updatedAt
   flagged            Boolean
@@ -431,8 +428,8 @@ model City {
   type_id            String
   territory          Territory            @relation(fields: [territory_id], references: [id])
   territory_id       String
-  users_visited      User[]
-  airports           Airport[]            @relation(fields: [airport_id], references: [id])
+  // add users_visited
+  airports           Airport[]
   airport_id         String
   AccommodationPlace AccommodationPlace[]
 }
@@ -452,7 +449,7 @@ model Language {
 
 model Airport {
   created_by       User               @relation(fields: [created_by_id], references: [id])
-  created_by_id    Int
+  created_by_id    String
   created_at       DateTime           @default(now())
   updated_at       DateTime           @updatedAt
   flagged          Boolean
@@ -462,7 +459,8 @@ model Airport {
   name             String
   iata             String
   icao             String
-  city             City               @relation(fields: [cityId], references: [id])
+  city             City               @relation(fields: [city_id], references: [id])
+  city_id          String
   FlightTrip       FlightTrip[]
   IndividualFlight IndividualFlight[]
   cityId           String
@@ -476,7 +474,7 @@ model Vaccine {
   manufacturer          VaccineManufacturer @relation(fields: [vaccineManufacturerId], references: [id])
   diseases_targeted     Disease[]
   created_by            User                @relation(fields: [created_by_id], references: [id])
-  created_by_id         Int
+  created_by_id         String
   vaccineManufacturerId String
 }
 
@@ -485,7 +483,7 @@ model Disease {
   name          String
   type          DiseaseType @relation(fields: [diseaseTypeId], references: [id]) // add relation
   created_by    User        @relation(fields: [created_by_id], references: [id])
-  created_by_id Int
+  created_by_id String
   Vaccine       Vaccine?    @relation(fields: [vaccineId], references: [id])
   vaccineId     String?
   diseaseTypeId String
@@ -495,7 +493,7 @@ model DiseaseType {
   id            String    @id @default(cuid())
   name          String
   created_by    User      @relation(fields: [created_by_id], references: [id])
-  created_by_id Int
+  created_by_id String
   Disease       Disease[]
 }
 
@@ -503,7 +501,7 @@ model VaccineManufacturer {
   id            String    @id @default(cuid())
   name          String
   created_by    User      @relation(fields: [created_by_id], references: [id])
-  created_by_id Int
+  created_by_id String
   Vaccine       Vaccine[]
 }
 
