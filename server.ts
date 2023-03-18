@@ -1,9 +1,13 @@
-import express, { Request, Response } from "express";
+const { PrismaClient } = require("@prisma/client");
 
-const app = express();
+const prisma = new PrismaClient();
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({ message: "test response" });
-});
-
-app.listen(3001);
+(async () => {
+  try {
+    console.log(await prisma.widget.create({ data: {} }));
+  } catch (err) {
+    console.error("error executing query:", err);
+  } finally {
+    prisma.$disconnect();
+  }
+})();
