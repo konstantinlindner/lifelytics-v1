@@ -14,14 +14,14 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.5",
+    "concurrently": "^7.6.0",
     "prisma": "^4.11.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "dev": "ts-node-dev src/server/server.ts && cd src/client && npm install && npm run dev",
     "dev-be": "ts-node-dev src/server/server.ts",
     "dev-fe": "cd src/client && npm run dev",
-    "build": "node src/server/server.ts && cd src/client && npm install && npm run build"
+    "build": "node src/server/server.ts"
   }
 }
