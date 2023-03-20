@@ -20,6 +20,6 @@
   },
   "scripts": {
     "dev": "ts-node-dev src/server/server.ts",
-    "production": "node src/server/server.ts"
+    "build": "node src/server/server.ts"
   }
 }
