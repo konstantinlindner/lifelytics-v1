@@ -1,1 +1,1 @@
-# life-organizer-be
+# life-organizer
