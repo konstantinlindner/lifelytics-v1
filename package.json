@@ -1,0 +1,13 @@
+{
+  "name": "life-organizer",
+  "version": "1.0.0",
+  "description": "Complete BE and FE for a personal productivity and data logging suite.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd src/client && ",
+    "production": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Lindner",
+  "license": "ISC"
+}
