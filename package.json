@@ -22,6 +22,7 @@
   "scripts": {
     "dev-be": "ts-node-dev src/server/server.ts",
     "dev-fe": "cd src/client && npm run dev",
-    "build": "node src/server/server.ts"
+    "production-be": "node src/server/server.ts",
+    "production_fe": ""
   }
 }
