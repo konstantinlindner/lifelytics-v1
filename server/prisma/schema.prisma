@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "cockroachdb"
-  url      = env("DATABASE_URL")
+  provider  = "cockroachdb"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Widget {
@@ -67,8 +68,8 @@ model User {
   disease_types_created         DiseaseType[]
   vaccine_manufacturers_created VaccineManufacturer[]
   transaction_places            TransactionPlace[]
-  ip_adresses                   IpAddress             @relation(fields: [ip_addresses_ids], references: [id])
-  ip_addresses_ids              String[]
+  // ip_adresses                   IpAddress             @relation(fields: [ip_addresses_ids], references: [id])
+  // ip_addresses_ids              String[]
   region                        Region?               @relation(fields: [region_id], references: [id])
   region_id                     String
 }
@@ -83,7 +84,7 @@ model IpAddress {
   id          String  @id @default(cuid())
   ip_address  String  @unique
   blacklisted Boolean
-  users       User[]
+  // users       User[]
 }
 
 // economics
