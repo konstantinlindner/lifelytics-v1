@@ -21,11 +21,11 @@ model User {
   created_at                    DateTime              @default(now())
   updated_at                    DateTime              @updatedAt
   email                         String                @unique
-  email_verified                DateTime?
-  phone                         String                @unique
+  email_verified_at             DateTime?
+  phone                         String?               @unique
   birth_date                    DateTime              @db.Date
-  password_salt                 String
-  password_hashed               String
+  // password_salt                 String
+  // password_hashed               String
   first_name                    String
   last_name                     String
   image                         String?
@@ -33,15 +33,14 @@ model User {
   website                       String?
   banned                        Boolean
   flagged                       Boolean
-  flagged_message               String
-  last_login_at                 DateTime              @db.Timestamptz() // does something need to go inside brackets?
+  flagged_message               String?
+  // last_login_at                 DateTime              @db.Timestamptz() // does something need to go inside brackets?
   // add last login_ip
   // add all_known_ips                 
-  failed_login_attempts         Int
+  failed_login_attempts         Int?
   role                          Role                  @relation(fields: [role_id], references: [id])
   role_id                       String
-  location                      String // look at this one
-  location_id                   String
+  // location                      String // look at this one
   // add  cities_visited
   // add  selected_currencies
   transactions                  Transaction[]
@@ -67,11 +66,11 @@ model User {
   diseases_created              Disease[]
   disease_types_created         DiseaseType[]
   vaccine_manufacturers_created VaccineManufacturer[]
-  ipAddressId                   String
-  TransactionPlace              TransactionPlace[]
-  Region                        Region?               @relation(fields: [regionId], references: [id])
-  regionId                      String?
-  IpAddress                     IpAddress             @relation(fields: [ipAddressId], references: [id])
+  transaction_places            TransactionPlace[]
+  ip_adresses                   IpAddress             @relation(fields: [ip_addresses_ids], references: [id])
+  ip_addresses_ids              String[]
+  region                        Region?               @relation(fields: [region_id], references: [id])
+  region_id                     String
 }
 
 model Role {
