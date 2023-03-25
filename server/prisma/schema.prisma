@@ -35,6 +35,7 @@ model User {
   banned                        Boolean
   flagged                       Boolean
   flagged_message               String?
+  profile_views                 Int // default to 0
   // last_login_at                 DateTime              @db.Timestamptz() // does something need to go inside brackets?
   // add last login_ip
   // add all_known_ips                 
