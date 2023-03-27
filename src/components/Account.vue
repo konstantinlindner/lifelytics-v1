@@ -1,6 +1,7 @@
 <script setup>
 import { supabase } from "../supabase";
 import { onMounted, ref, toRefs } from "vue";
+import Avatar from "./Avatar.vue";
 
 const props = defineProps(["session"]);
 const { session } = toRefs(props);
@@ -89,6 +90,12 @@ async function signOut() {
       <label for="website">Website</label>
       <input id="website" type="website" v-model="website" />
     </div>
+    <form class="form-widget" @submit.prevent="updateProfile">
+      <!-- Add to body -->
+      <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
+
+      <!-- Other form elements -->
+    </form>
 
     <div>
       <input
@@ -104,19 +111,5 @@ async function signOut() {
         Sign Out
       </button>
     </div>
-  </form>
-</template>
-
-<script>
-// Import the new component
-import Avatar from "./Avatar.vue";
-</script>
-
-<template>
-  <form class="form-widget" @submit.prevent="updateProfile">
-    <!-- Add to body -->
-    <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
-
-    <!-- Other form elements -->
   </form>
 </template>
