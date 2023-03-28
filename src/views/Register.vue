@@ -1,43 +1,114 @@
+<script>
+import { ref } from "vue";
+export default {
+  name: "register",
+  setup() {
+    // create data / vars
+
+    const firstName = ref(null);
+    const lastName = ref(null);
+    const dateOfBirth = ref(null);
+    const email = ref(null);
+    const phoneNumber = ref(null);
+    const password = ref(null);
+    const confirmPassword = ref(null);
+    const errorMsg = ref(null);
+
+    // register function
+
+    return {
+      firstName,
+      lastName,
+      dateOfBirth,
+      email,
+      phoneNumber,
+      password,
+      confirmPassword,
+      errorMsg,
+    };
+  },
+};
+</script>
+
 <template>
   <div class="max-w-screen-sm mx-auto px-4 py-10">
     <!-- Error Handling -->
+
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
+
     <!-- Register -->
+
     <form class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg">
       <h1 class="text-3xl text-black mb-4">Register</h1>
+
+      <div class="flex flex-col mb-2">
+        <label for="firstName" class="mb-1 text-sm text-black"
+          >First name</label
+        >
+        <input
+          type="text"
+          required
+          class="p-2 text-black focus:outline"
+          id="firstName"
+          v-model="firstName"
+        />
+      </div>
+
+      <div class="flex flex-col mb-2">
+        <label for="lastName" class="mb-1 text-sm text-black">Last name</label>
+        <input
+          type="text"
+          required
+          class="p-2 text-black focus:outline"
+          id="lastName"
+          v-model="lastName"
+        />
+      </div>
+
+      <div class="flex flex-col mb-2">
+        <label for="dateOfBirth" class="mb-1 text-sm text-black"
+          >Date of birth</label
+        >
+        <input
+          type="date"
+          required
+          class="p-2 text-black focus:outline"
+          id="dateOfBirth"
+          v-model="dateOfBirth"
+        />
+      </div>
 
       <div class="flex flex-col mb-2">
         <label for="email" class="mb-1 text-sm text-black">Email</label>
         <input
           type="text"
           required
-          class="p-2 text-black focus:outline-none"
+          class="p-2 text-black focus:outline"
           id="email"
           v-model="email"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="password" class="mb-1 text-sm text-black">Password</label>
+        <label for="phone" class="mb-1 text-sm text-black">Phone number</label>
         <input
-          type="password"
-          required
-          class="p-2 text-black focus:outline-none"
-          id="password"
-          v-model="password"
+          type="number"
+          class="p-2 text-black focus:outline"
+          id="phone"
+          v-model="phoneNumber"
         />
       </div>
 
       <div class="flex flex-col mb-2">
         <label for="confirmPassword" class="mb-1 text-sm text-black"
-          >Confirm Password</label
+          >Confirm password</label
         >
         <input
           type="password"
           required
-          class="p-2 text-black focus:outline-none"
+          class="p-2 text-black focus:outline"
           id="confirmPassword"
           v-model="confirmPassword"
         />
@@ -54,20 +125,3 @@
     </form>
   </div>
 </template>
-
-<script>
-import { ref } from "vue";
-export default {
-  name: "register",
-  setup() {
-    // create data / vars
-    const email = ref(null);
-    const password = ref(null);
-    const confirmPassword = ref(null);
-    const errorMsg = ref(null);
-    // register function
-
-    return { email, password, confirmPassword, errorMsg };
-  },
-};
-</script>
