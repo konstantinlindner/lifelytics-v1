@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <header class="light-green text-white">
+  <header class="light-green text-black">
     <nav
       class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row"
     >
