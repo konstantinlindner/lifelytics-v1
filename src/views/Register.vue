@@ -119,9 +119,12 @@ export default {
       >
         Register
       </button>
-      <router-link class="text-sm mt-5 text-center" :to="{ name: 'Login' }"
-        >Already have an account?</router-link
-      >
+      <div class="flex justify-center">
+        <router-link class="text-sm mt-5" :to="{ name: 'Login' }"
+          >Already have an account?
+          <span class="text-dark-light-green">Sign in</span></router-link
+        >
+      </div>
     </form>
   </div>
 </template>

@@ -1,3 +1,20 @@
+<script>
+import { ref } from "vue";
+export default {
+  name: "register",
+  setup() {
+    // create data / vars
+    const email = ref(null);
+    const password = ref(null);
+    const confirmPassword = ref(null);
+    const errorMsg = ref(null);
+    // register function
+
+    return { email, password, confirmPassword, errorMsg };
+  },
+};
+</script>
+
 <template>
   <div class="max-w-screen-sm mx-auto px-4 py-10">
     <!-- Error Handling -->
@@ -35,26 +52,12 @@
       >
         Sign in
       </button>
-      <router-link class="text-sm mt-5 text-center" :to="{ name: 'Register' }"
-        >Don't have an account?</router-link
-      >
+      <div class="flex justify-center">
+        <router-link class="text-sm mt-5" :to="{ name: 'Register' }"
+          >Don't have an account?
+          <span class="text-dark-light-green">Sign up</span></router-link
+        >
+      </div>
     </form>
   </div>
 </template>
-
-<script>
-import { ref } from "vue";
-export default {
-  name: "register",
-  setup() {
-    // create data / vars
-    const email = ref(null);
-    const password = ref(null);
-    const confirmPassword = ref(null);
-    const errorMsg = ref(null);
-    // register function
-
-    return { email, password, confirmPassword, errorMsg };
-  },
-};
-</script>
