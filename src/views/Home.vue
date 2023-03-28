@@ -7,6 +7,7 @@
 <script>
 export default {
   name: "home",
+  components: {},
   setup() {
     // blabla
     //blabla

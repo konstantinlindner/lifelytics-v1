@@ -1,9 +1,15 @@
 <script>
 import Navigation from "./components/Navigation.vue";
+import Login from "./views/Login.vue";
+import Home from "./views/Home.vue";
+import Register from "./views/Register.vue";
 
 export default {
   components: {
     Navigation,
+    Home,
+    Login,
+    Register,
   },
   setup() {
     // Create data / vars

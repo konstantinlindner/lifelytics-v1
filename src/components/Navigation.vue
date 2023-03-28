@@ -17,14 +17,13 @@ export default {
     <nav
       class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row"
     >
-      <router-link class="cursor-pointer" :to="{ name: 'Home' }">
-        <div class="cursor-pointer select-none flex items-center gap-x-4">
-          <img class="W-14" width="50" src="../assets/logo.png" />
-          <h1 class="text-xl">
-            <span class="font-thin">konte</span
-            ><span class="font-normal">life</span>
-          </h1>
-        </div></router-link
+      <div class="cursor-pointer select-none flex items-center gap-x-4">
+        <img class="W-14" width="50" src="../assets/logo.png" />
+        <h1 class="text-xl">
+          <span class="font-thin">konte</span
+          ><span class="font-normal">life</span>
+        </h1>
+      </div>
       >
       <ul class="flex flex-1 justify-end gap-x-10">
         <router-link class="cursor-pointer" :to="{ name: 'Home' }"
