@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      Roboto: ["Roboto"],
+      Roboto: ["Roboto, sans-serif"],
     },
     container: {
       center: true,
