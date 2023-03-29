@@ -1,5 +1,7 @@
 <script>
 import { ref } from "vue";
+import { supabase } from "../supabase.js";
+import { useRouter } from "vue-router";
 export default {
   name: "register",
   setup() {

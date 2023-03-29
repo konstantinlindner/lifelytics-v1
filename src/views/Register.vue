@@ -1,10 +1,13 @@
 <script>
 import { ref } from "vue";
+import { supabase } from "../supabase.js";
+import { useRouter } from "vue-router";
 export default {
   name: "register",
   setup() {
     // create data / vars
 
+    const router = useRouter();
     const firstName = ref(null);
     const lastName = ref(null);
     const dateOfBirth = ref(null);
@@ -16,6 +19,29 @@ export default {
 
     // register function
 
+    const register = async () => {
+      if (password.value === confirmPassword.value) {
+        try {
+          const { error } = await supabase.auth.signUp({
+            email: email.value,
+            password: password.value,
+          });
+          if (error) throw error;
+          router.push({ name: "Login" });
+        } catch (error) {
+          errorMsg.value = error.message;
+          setTimeout(() => {
+            errorMsg.value = null;
+          }, 5000);
+        }
+        return;
+      }
+      errorMsg.value = "Passwords do not match";
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    };
+
     return {
       firstName,
       lastName,
@@ -25,6 +51,7 @@ export default {
       password,
       confirmPassword,
       errorMsg,
+      register,
     };
   },
 };
@@ -40,7 +67,10 @@ export default {
 
     <!-- Register -->
 
-    <form class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg">
+    <form
+      @submit.prevent="register"
+      class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
+    >
       <h1 class="text-3xl text-black mb-4">Register</h1>
 
       <div class="flex flex-col mb-2">
@@ -98,6 +128,17 @@ export default {
           class="p-2 text-black focus:outline"
           id="phone"
           v-model="phoneNumber"
+        />
+      </div>
+
+      <div class="flex flex-col mb-2">
+        <label for="Password" class="mb-1 text-sm text-black">Password</label>
+        <input
+          type="password"
+          required
+          class="p-2 text-black focus:outline"
+          id="Password"
+          v-model="password"
         />
       </div>
 
