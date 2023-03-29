@@ -3,16 +3,32 @@ import { ref } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 export default {
-  name: "register",
+  name: "login",
   setup() {
     // create data / vars
+    const router = useRouter();
     const email = ref(null);
     const password = ref(null);
     const confirmPassword = ref(null);
     const errorMsg = ref(null);
-    // register function
+    // login function
+    const login = async () => {
+      try {
+        const { error } = await supabase.auth.signInWithPassword({
+          email: email.value,
+          password: password.value,
+        });
+        if (error) throw error;
+        router.push({ name: "Home" });
+      } catch (error) {
+        errorMsg.value = `Error: ${error.message}`;
+        setTimeout(() => {
+          errorMsg.value = null;
+        }, 5000);
+      }
+    };
 
-    return { email, password, confirmPassword, errorMsg };
+    return { email, password, errorMsg, login };
   },
 };
 </script>
@@ -24,7 +40,10 @@ export default {
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
     <!-- Login -->
-    <form class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg">
+    <form
+      @submit.prevent="login"
+      class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
+    >
       <h1 class="text-3xl text-black mb-4">Welcome back</h1>
 
       <div class="flex flex-col mb-2">
