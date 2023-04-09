@@ -3,6 +3,9 @@ import Navigation from "./components/Navigation.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 import Register from "./views/Register.vue";
+import { ref } from "vue";
+import { supabase } from "./supabase.js";
+import store from "./store/index.js";
 
 export default {
   components: {
@@ -13,18 +16,28 @@ export default {
   },
   setup() {
     // Create data / vars
+    const appReady = ref(null);
     // Check to see if user is already logged in
+    const user = supabase.auth.user();
     // If user does not exist, need to make app ready
+    if (!user) {
+      appReady.value = true;
+    }
     // Runs when there is a auth state change
-    // if user is logged in, this will fire
 
-    return {};
+    // if user is logged in, this will fire
+    supabase.auth.onAuthStateChange((_, session) => {
+      store.methods.setUser(session);
+      appReady.value = true;
+    });
+
+    return { appReady };
   },
 };
 </script>
 
 <template>
-  <div class="min-h-full font-Roboto box-border">
+  <div v-if="appReady" class="min-h-full font-Roboto box-border">
     <Navigation />
     <router-view />
   </div>
