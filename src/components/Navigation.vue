@@ -21,8 +21,8 @@ export default {
         <div class="cursor-pointer select-none flex items-center gap-x-4">
           <img class="W-14" width="50" src="../assets/logo.png" />
           <h1 class="text-xl">
-            <span class="font-thin">konte</span
-            ><span class="font-normal">life</span>
+            <span class="font-thin">life</span
+            ><span class="font-normal">lytics</span>
           </h1>
         </div></router-link
       >
