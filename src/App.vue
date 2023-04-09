@@ -6,6 +6,7 @@ import Register from "./views/Register.vue";
 import { ref } from "vue";
 import { supabase } from "./supabase.js";
 import store from "./store/index.js";
+import MenuLeft from "./components/MenuLeft.vue";
 
 export default {
   components: {
@@ -13,6 +14,7 @@ export default {
     Home,
     Login,
     Register,
+    MenuLeft,
   },
   setup() {
     // Create data / vars
@@ -39,8 +41,13 @@ export default {
 
 <template>
   <div v-if="appReady" class="min-h-full font-Roboto box-border">
-    <Navigation />
-    <router-view />
+    <div class="flex">
+      <MenuLeft />
+      <div class="w-screen">
+        <Navigation />
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
