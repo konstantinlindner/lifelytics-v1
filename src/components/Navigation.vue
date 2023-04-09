@@ -1,13 +1,20 @@
 <script>
+import { supabase } from "../supabase.js";
+import { useRouter } from "vue-router";
 export default {
   setup() {
     // get user from store
 
     // setup ref to router
+    const router = useRouter;
 
     // logout function
+    const logout = async () => {
+      await supabase.auth.signOut();
+      router.push("Home");
+    };
 
-    return {};
+    return { logout };
   },
 };
 </script>
@@ -34,7 +41,7 @@ export default {
           >Register</router-link
         >
         <li class="cursor-pointer">Profile</li>
-        <li class="cursor-pointer">Logout</li>
+        <li @click="logout" class="cursor-pointer">Logout</li>
       </ul>
     </nav>
   </header>
