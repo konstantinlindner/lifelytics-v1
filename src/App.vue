@@ -29,7 +29,6 @@ export default {
 
     // if user is logged in, this will fire
     supabase.auth.onAuthStateChange((_, session) => {
-      console.log("logged in");
       store.methods.setUser(session);
       appReady.value = true;
     });
