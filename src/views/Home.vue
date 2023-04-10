@@ -1,10 +1,3 @@
-<template>
-  <div class="mx-10 mt-10">
-    <h1 class="text-xl font-semibold">Welcome to lifelytics</h1>
-    <br />
-  </div>
-</template>
-
 <script>
 export default {
   name: "home",
@@ -17,3 +10,10 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="mx-10 my-10">
+    <h1 class="text-xl">Welcome to lifelytics</h1>
+    <br />
+  </div>
+</template>
