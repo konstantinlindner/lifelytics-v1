@@ -24,24 +24,22 @@ export default {
 
 <template>
   <header class="bg-light-green">
-    <nav
-      class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row h-24"
-    >
-      <ul class="flex flex-1 justify-end gap-x-10">
-        <router-link class="cursor-pointer" :to="{ name: 'Home' }"
-          >Home</router-link
-        >
+    <nav class="h-24 px-4 gap-x-4 flex flex-row items-center justify-end">
+      <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Home' }"
+        >Home</router-link
+      >
 
-        <router-link v-if="!user" class="cursor-pointer" :to="{ name: 'Login' }"
-          >Sign in</router-link
-        >
+      <router-link v-if="!user" class="cursor-pointer" :to="{ name: 'Login' }"
+        >Sign in</router-link
+      >
 
-        <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Home' }"
-          >Profile</router-link
-        >
+      <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Home' }"
+        >Profile</router-link
+      >
 
-        <li v-if="user" @click="logout" class="cursor-pointer">Sign out</li>
-      </ul>
+      <li v-if="user" @click="logout" class="cursor-pointer list-none">
+        Sign out
+      </li>
     </nav>
   </header>
 </template>
