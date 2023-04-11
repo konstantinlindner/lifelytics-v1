@@ -78,7 +78,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="!user" class="max-w-screen-sm mx-auto px-4 py-10">
+  <div v-if="!user" class="max-w-sm mx-auto px-4 py-10">
     <!-- Error Handling -->
 
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">
@@ -91,92 +91,67 @@ export default {
       @submit.prevent="register"
       class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
     >
-      <h1 class="text-3xl text-black mb-4">Register</h1>
+      <h1 class="text-3xl mb-4">Register</h1>
 
       <div class="flex flex-col mb-2">
-        <label for="firstName" class="mb-1 text-sm text-black"
-          >First name</label
-        >
+        <label for="firstName" class="mb-1 text-sm">First name</label>
         <input
           type="text"
           required
-          class="p-2 text-black focus:outline"
+          class="rounded-md p-2 focus:outline-none"
           id="firstName"
           v-model="firstName"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="lastName" class="mb-1 text-sm text-black">Last name</label>
+        <label for="lastName" class="mb-1 text-sm">Last name</label>
         <input
           type="text"
           required
-          class="p-2 text-black focus:outline"
+          class="rounded-md p-2 focus:outline-none"
           id="lastName"
           v-model="lastName"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="dateOfBirth" class="mb-1 text-sm text-black"
-          >Date of birth</label
-        >
-        <input
-          type="date"
-          required
-          class="p-2 text-black focus:outline"
-          id="dateOfBirth"
-          v-model="dateOfBirth"
-        />
-      </div>
-
-      <div class="flex flex-col mb-2">
-        <label for="email" class="mb-1 text-sm text-black">Email</label>
+        <label for="email" class="mb-1 text-sm">Email</label>
         <input
           type="text"
           required
-          class="p-2 text-black focus:outline"
+          class="rounded-md p-2 focus:outline-none"
           id="email"
           v-model="email"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="phone" class="mb-1 text-sm text-black">Phone number</label>
-        <input
-          type="number"
-          class="p-2 text-black focus:outline"
-          id="phone"
-          v-model="phoneNumber"
-        />
-      </div>
-
-      <div class="flex flex-col mb-2">
-        <label for="Password" class="mb-1 text-sm text-black">Password</label>
+        <label for="Password" class="mb-1 text-sm">Password</label>
         <input
           type="password"
           required
-          class="p-2 text-black focus:outline"
+          class="rounded-md p-2 focus:outline-none"
           id="Password"
           v-model="password"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="confirmPassword" class="mb-1 text-sm text-black"
+        <label for="confirmPassword" class="mb-1 text-sm"
           >Confirm password</label
         >
         <input
           type="password"
           required
-          class="p-2 text-black focus:outline"
+          class="rounded-md p-2 focus:outline-none"
           id="confirmPassword"
           v-model="confirmPassword"
         />
       </div>
       <button
         type="submit"
-        class="mt-6 py-2 px-6 rounded-sm self-start text-sm text-black bg-light-green duration-200 hover:bg-dark-light-green mb-4"
+        class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-200 hover:bg-dark-light-green mb-4"
       >
         Register
       </button>

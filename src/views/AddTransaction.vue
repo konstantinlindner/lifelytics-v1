@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="user" class="max-w-screen-sm mx-auto px-4 py-10">
+  <div v-if="user" class="px-4 py-4">
     <!-- Error Handling -->
 
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">
@@ -46,33 +46,35 @@ export default {
 
     <!-- Login -->
 
-    <form class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg">
-      <h1 class="text-3xl text-black mb-4">New transaction</h1>
+    <form
+      class="max-w-screen-sm p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
+    >
+      <h1 class="text-3xl mb-4">New transaction</h1>
 
       <div class="flex flex-col mb-2">
-        <label for="name" class="mb-1 text-sm text-black">Name</label>
+        <label for="name" class="mb-1 text-sm">Name</label>
         <input
           type="text"
           required
-          class="p-2 text-black focus:outline-none"
+          class="rounded-md p-2 focus:outline-none"
           id="name"
           v-model="name"
         />
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="amount" class="mb-1 text-sm text-black">Amount</label>
+        <label for="amount" class="mb-1 text-sm">Amount</label>
         <input
           type="number"
           required
-          class="p-2 text-black focus:outline-none"
+          class="rounded-md p-2 focus:outline-none"
           id="amount"
           v-model="amount"
         />
       </div>
       <button
         type="submit"
-        class="mt-6 py-2 px-6 rounded-sm self-start text-sm text-black bg-light-green duration-200 hover:bg-dark-light-green mb-4"
+        class="mt-6 py-2 px-6 rounded-sm self-start text-sm bg-light-green duration-200 hover:bg-dark-light-green mb-4"
       >
         Next
       </button>
