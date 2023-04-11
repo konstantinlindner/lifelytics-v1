@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <nav class="bg-light-grey h-screen w-72">
+  <nav class="bg-light-light-grey h-screen w-72">
     <ul class="px-5 py-5">
       <li>Item 1</li>
       <li>Item 2</li>

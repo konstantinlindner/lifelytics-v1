@@ -24,7 +24,7 @@ export default {
 
 <template>
   <header class="bg-light-green">
-    <nav class="h-24 px-4 gap-x-4 flex flex-row items-center justify-end">
+    <nav class="h-24 px-10 gap-x-5 flex flex-row items-center justify-end">
       <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Home' }"
         >Home</router-link
       >

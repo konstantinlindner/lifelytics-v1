@@ -13,6 +13,7 @@ module.exports = {
         "light-purple": "#b4a7d6",
         "light-pink": "#d5a6bd",
         "light-grey": "#ededed",
+        "light-light-grey": "#f5f5f5",
       },
     },
     fontFamily: {

@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
+import { computed } from "vue";
+import store from "../store/index.js";
 export default {
   name: "register",
   setup() {
@@ -42,6 +44,23 @@ export default {
       }, 5000);
     };
 
+    // Set user const
+
+    const user = computed(() => store.state.user);
+
+    // If already logged in, redirect to home
+
+    async function redirectSignedIn() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
+        router.push({ name: "Home" });
+      }
+    }
+
+    redirectSignedIn();
+
     return {
       firstName,
       lastName,
@@ -52,13 +71,14 @@ export default {
       confirmPassword,
       errorMsg,
       register,
+      user,
     };
   },
 };
 </script>
 
 <template>
-  <div class="max-w-screen-sm mx-auto px-4 py-10">
+  <div v-if="!user" class="max-w-screen-sm mx-auto px-4 py-10">
     <!-- Error Handling -->
 
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">
