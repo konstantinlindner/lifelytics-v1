@@ -11,13 +11,20 @@ export default {
 
 <template>
   <nav class="bg-light-light-grey h-screen w-72">
-    <ul class="px-5 py-5">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-      <li>Item 6</li>
-    </ul>
+    <div class="px-5 py-5">
+      <ul class="">
+        <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Home' }"
+          >Home</router-link
+        >
+      </ul>
+      <ul class="pt-2">
+        <router-link
+          v-if="user"
+          class="cursor-pointer"
+          :to="{ name: 'Add transaction' }"
+          >Add transaction</router-link
+        >
+      </ul>
+    </div>
   </nav>
 </template>
