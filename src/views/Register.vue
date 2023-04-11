@@ -12,9 +12,7 @@ export default {
     const router = useRouter();
     const firstName = ref(null);
     const lastName = ref(null);
-    const dateOfBirth = ref(null);
     const email = ref(null);
-    const phoneNumber = ref(null);
     const password = ref(null);
     const confirmPassword = ref(null);
     const errorMsg = ref(null);
