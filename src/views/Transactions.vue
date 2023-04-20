@@ -44,5 +44,6 @@ export default {
 
   <body class="px-10 pt-8">
     Below is a table of all transactions.
+    <img class="mt-20 m-auto" src="../assets/transactions.svg" width="500" />
   </body>
 </template>

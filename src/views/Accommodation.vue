@@ -27,5 +27,6 @@ export default {
   </header>
   <body class="px-10 pt-8">
     Below is a table of all accommodations.
+    <img class="mt-20 m-auto" src="../assets/accommodation.svg" width="500" />
   </body>
 </template>

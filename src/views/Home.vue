@@ -40,7 +40,7 @@ export default {
       <p>
         <span>Welcome back </span><span class="italic">{{ user.email }}</span>
       </p>
-      <p class="mt-20">This is where you will see your dashboard.</p>
     </body>
   </div>
+  <img class="mt-20 m-auto" src="../assets/data.svg" width="450" />
 </template>

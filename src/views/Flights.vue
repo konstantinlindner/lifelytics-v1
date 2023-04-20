@@ -27,5 +27,6 @@ export default {
   </header>
   <body class="px-10 pt-8">
     Below is a table of all flights.
+    <img class="mt-20 m-auto" src="../assets/flights.svg" width="500" />
   </body>
 </template>
