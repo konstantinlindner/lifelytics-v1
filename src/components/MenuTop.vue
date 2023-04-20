@@ -4,10 +4,11 @@ import { computed } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
+import Logo from "./Logo.vue";
 
 export default {
   name: "MenuTop",
-  components: { Icon },
+  components: { Icon, Logo },
   setup() {
     // get user from store
     const user = computed(() => store.state.user);
@@ -27,8 +28,11 @@ export default {
 </script>
 
 <template>
-  <header class="bg-light-green h-24">
-    <nav class="h-24 mx-5 gap-x-1 flex flex-row items-center justify-end">
+  <header class="flex flex-row h-24">
+    <div class="mr-auto" v-if="!user"><Logo /></div>
+    <nav
+      class="h-24 mx-5 gap-x-1 flex flex-row items-center justify-end ml-auto"
+    >
       <li v-if="!user" class="list-none">
         <div class="flex flex-row items-center">
           <router-link

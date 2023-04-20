@@ -50,10 +50,10 @@ export default {
 </script>
 
 <template>
-  <div class="font-Roboto box-border flex w-screen">
+  <div class="font-Roboto box-border flex h-screen w-screen">
     <MenuLeft />
 
-    <div class="flex flex-col">
+    <div class="flex flex-col w-screen">
       <MenuTop />
 
       <router-view />

@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-light-green w-72 h-24 flex items-center justify-center">
+  <header class="w-72 h-24 flex items-center justify-center">
     <router-link
       class="cursor-pointer select-none flex items-center gap-x-3"
       :to="{ name: 'Home' }"

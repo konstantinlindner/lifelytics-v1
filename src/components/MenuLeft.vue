@@ -15,10 +15,9 @@ export default {
 </script>
 
 <template>
-  <div class="h-screen">
+  <div v-if="user" class="h-screen border-r">
     <Logo />
-
-    <nav v-if="user" class="w-72">
+    <nav class="w-72">
       <menu class="flex flex-col space-y-1 px-5 py-5">
         <li>
           <div class="flex flex-row items-center">
