@@ -1,8 +1,8 @@
 <script>
-import store from "../../store/index.js";
+import store from "../store/index.js";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
-import Logo from "../Logo.vue";
+import Logo from "./Logo.vue";
 
 export default {
   name: "MenuLeft",
