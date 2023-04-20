@@ -4,6 +4,7 @@ import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 
 export default {
+  name: "MenuLeft",
   components: { Icon },
   setup() {
     const user = computed(() => store.state.user);
@@ -11,9 +12,6 @@ export default {
   },
 };
 </script>
-
-class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green
-duration-200 hover:bg-dark-light-green mb-4"
 
 <template>
   <nav class="bg-light-light-grey h-screen w-72">
@@ -38,6 +36,30 @@ duration-200 hover:bg-dark-light-green mb-4"
           >
             <Icon icon="mdi:cash" width="20" />
             <p class="ml-1.5">Transactions</p>
+          </router-link>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex flex-row items-center">
+          <router-link
+            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            :to="{ name: 'Flights' }"
+          >
+            <Icon icon="mdi:airplane" width="20" />
+            <p class="ml-1.5">Flights</p>
+          </router-link>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex flex-row items-center">
+          <router-link
+            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            :to="{ name: 'Accommodation' }"
+          >
+            <Icon icon="mdi:home-city" width="16" />
+            <p class="ml-1.5">Accommodation</p>
           </router-link>
         </div>
       </li>

@@ -9,6 +9,8 @@ import MenuLeft from "./components/Navigation/MenuLeft.vue";
 import { computed } from "vue";
 import Logo from "./components/Logo.vue";
 import AddTransaction from "./views/AddTransaction.vue";
+import Flights from "./views/Flights.vue";
+import Accommodation from "./views/Accommodation.vue";
 
 export default {
   components: {
@@ -19,7 +21,10 @@ export default {
     MenuLeft,
     Logo,
     AddTransaction,
+    Flights,
+    Accommodation,
   },
+
   setup() {
     // Create data / vars
 

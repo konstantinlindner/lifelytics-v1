@@ -14,6 +14,7 @@ module.exports = {
         "light-pink": "#d5a6bd",
         "light-grey": "#ededed",
         "light-light-grey": "#f5f5f5",
+        "overlay-background": "#0000004d",
       },
     },
     fontFamily: {

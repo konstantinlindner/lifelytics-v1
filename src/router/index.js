@@ -5,6 +5,8 @@ import Register from "../views/Register.vue";
 import AddTransaction from "../views/AddTransaction.vue";
 import Profile from "../views/Profile.vue";
 import Transactions from "../views/Transactions.vue";
+import Flights from "../views/Flights.vue";
+import Accommodation from "../views/Accommodation.vue";
 
 const routes = [
   {
@@ -36,6 +38,16 @@ const routes = [
     path: "/transactions",
     name: "Transactions",
     component: Transactions,
+  },
+  {
+    path: "/flights",
+    name: "Flights",
+    component: Flights,
+  },
+  {
+    path: "/accommodation",
+    name: "Accommodation",
+    component: Accommodation,
   },
 ];
 

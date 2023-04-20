@@ -6,6 +6,7 @@ import { useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
 
 export default {
+  name: "MenuTop",
   components: { Icon },
   setup() {
     // get user from store
@@ -27,14 +28,30 @@ export default {
 
 <template>
   <header class="bg-light-green h-24">
-    <nav class="h-24 mx-5 gap-x-5 flex flex-row items-center justify-end">
-      <router-link v-if="!user" class="cursor-pointer" :to="{ name: 'Home' }"
-        >Home</router-link
-      >
+    <nav class="h-24 mx-5 gap-x-1 flex flex-row items-center justify-end">
+      <li v-if="!user" class="list-none">
+        <div class="flex flex-row items-center">
+          <router-link
+            class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            :to="{ name: 'Home' }"
+          >
+            <Icon icon="mdi:home" width="20" />
+            <p class="ml-1.5">Home</p>
+          </router-link>
+        </div>
+      </li>
 
-      <router-link v-if="!user" class="cursor-pointer" :to="{ name: 'Login' }"
-        >Sign in</router-link
-      >
+      <li v-if="!user" class="list-none">
+        <div class="flex flex-row items-center">
+          <router-link
+            class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            :to="{ name: 'Login' }"
+          >
+            <Icon icon="mdi:login" width="20" />
+            <p class="ml-1.5">Sign in</p>
+          </router-link>
+        </div>
+      </li>
 
       <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Profile' }"
         >Profile</router-link

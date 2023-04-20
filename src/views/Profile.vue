@@ -5,7 +5,7 @@ import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 
 export default {
-  name: "profile",
+  name: "Profile",
   components: {},
   setup() {
     const user = computed(() => store.state.user);

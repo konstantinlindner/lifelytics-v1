@@ -6,7 +6,7 @@ import { computed } from "vue";
 import store from "../store/index.js";
 
 export default {
-  name: "addTransaction",
+  name: "AddTransaction",
   setup() {
     // create data / vars
 

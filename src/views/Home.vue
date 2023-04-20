@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { supabase } from "../supabase.js";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {},
   setup() {
     const user = computed(() => store.state.user);
@@ -23,16 +23,24 @@ export default {
 </script>
 
 <template>
-  <div v-if="!user" class="mx-10 my-10">
-    <h1 class="text-xl">Welcome to lifelytics!</h1>
-    <br />
-    <p>Please sign in to continue.</p>
+  <div v-if="!user">
+    <header class="px-10 pt-8">
+      <h1 class="text-xl">Welcome to lifelytics!</h1>
+    </header>
+    <body class="px-10 pt-8">
+      <p>Please sign in to continue.</p>
+    </body>
   </div>
-  <div v-else class="mx-10 my-10">
-    <h1 class="text-xl">
-      <span>Welcome back </span><span class="italic">{{ user.email }}</span>
-    </h1>
-    <br />
-    <p></p>
+
+  <div v-else>
+    <header class="px-10 pt-8">
+      <h1 class="text-xl">Home</h1>
+    </header>
+    <body class="px-10 pt-8">
+      <p>
+        <span>Welcome back </span><span class="italic">{{ user.email }}</span>
+      </p>
+      <p class="mt-20">This is where you will see your dashboard.</p>
+    </body>
   </div>
 </template>

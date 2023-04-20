@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { computed } from "vue";
 import store from "../store/index.js";
 export default {
-  name: "register",
+  name: "Register",
   setup() {
     // create data / vars
 

@@ -2,6 +2,7 @@
 import { Icon } from "@iconify/vue";
 
 export default {
+  name: "Logo",
   components: { Icon },
   setup() {},
 };
