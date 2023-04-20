@@ -50,16 +50,13 @@ export default {
 </script>
 
 <template>
-  <div class="min-h-full font-Roboto box-border">
-    <div class="flex">
-      <div><logo /></div>
-      <div class="w-screen">
-        <MenuTop />
-      </div>
-    </div>
-    <div class="flex">
-      <div v-if="user"><MenuLeft /></div>
-      <div class="w-screen">
+  <div class="font-Roboto box-border flex w-screen">
+    <MenuLeft />
+
+    <div class="flex flex-col">
+      <MenuTop />
+
+      <div class="w-full">
         <router-view />
       </div>
     </div>
