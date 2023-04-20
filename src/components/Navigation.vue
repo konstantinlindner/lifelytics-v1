@@ -3,6 +3,7 @@ import store from "../store/index.js";
 import { computed } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
+
 export default {
   setup() {
     // get user from store

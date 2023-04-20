@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { computed } from "vue";
 import store from "../store/index.js";
 export default {
-  name: "login",
+  name: "addTransaction",
   setup() {
     // create data / vars
 
@@ -17,6 +17,7 @@ export default {
     // Set user const
 
     const user = computed(() => store.state.user);
+    console.log(user);
 
     // If not logged in, redirect to sign in page
 

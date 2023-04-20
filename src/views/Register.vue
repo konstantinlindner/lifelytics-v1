@@ -10,6 +10,7 @@ export default {
     // create data / vars
 
     const router = useRouter();
+
     const firstName = ref(null);
     const lastName = ref(null);
     const email = ref(null);
@@ -42,9 +43,8 @@ export default {
       }, 5000);
     };
 
-    // Set user const
-
     const user = computed(() => store.state.user);
+    console.log(user);
 
     // If already logged in, redirect to home
 
@@ -62,11 +62,8 @@ export default {
     return {
       firstName,
       lastName,
-      dateOfBirth,
       email,
-      phoneNumber,
       password,
-      confirmPassword,
       errorMsg,
       register,
       user,

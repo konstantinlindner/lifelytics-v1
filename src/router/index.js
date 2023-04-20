@@ -23,7 +23,7 @@ const routes = [
   },
   {
     path: "/add-transaction",
-    name: "Add transaction",
+    name: "AddTransaction",
     component: AddTransaction,
   },
   {

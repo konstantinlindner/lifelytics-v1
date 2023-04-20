@@ -3,12 +3,12 @@ import Navigation from "./components/Navigation.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 import Register from "./views/Register.vue";
-import { ref } from "vue";
 import { supabase } from "./supabase.js";
 import store from "./store/index.js";
 import MenuLeft from "./components/MenuLeft.vue";
 import { computed } from "vue";
 import Logo from "./components/Logo.vue";
+import AddTransaction from "./views/AddTransaction.vue";
 
 export default {
   components: {
@@ -18,19 +18,18 @@ export default {
     Register,
     MenuLeft,
     Logo,
+    AddTransaction,
   },
   setup() {
     // Create data / vars
 
-    // const user = ref(null);
-
     // Get user data
 
-    // async function getUserData() {
-    //   const {
-    //     data: { user },
-    //   } = await supabase.auth.getUser();
-    // }
+    async function getUserData() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+    }
 
     // Runs when there is a auth state change
 

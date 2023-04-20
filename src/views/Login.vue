@@ -12,7 +12,6 @@ export default {
     const router = useRouter();
     const email = ref(null);
     const password = ref(null);
-    const confirmPassword = ref(null);
     const errorMsg = ref(null);
 
     // login function
@@ -34,8 +33,8 @@ export default {
     };
 
     // Set user const
-
     const user = computed(() => store.state.user);
+    console.log(user);
 
     // If already logged in, redirect to home
 

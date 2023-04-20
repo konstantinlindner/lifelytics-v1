@@ -2,11 +2,13 @@
 import store from "../store/index.js";
 import { computed } from "vue";
 import { supabase } from "../supabase.js";
+
 export default {
   name: "home",
   components: {},
   setup() {
     const user = computed(() => store.state.user);
+    console.log(user);
 
     async function getUserData() {
       const {

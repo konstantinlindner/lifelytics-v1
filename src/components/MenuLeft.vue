@@ -1,6 +1,7 @@
 <script>
 import store from "../store/index.js";
 import { computed } from "vue";
+
 export default {
   setup() {
     const user = computed(() => store.state.user);
@@ -21,7 +22,7 @@ export default {
         <router-link
           v-if="user"
           class="cursor-pointer"
-          :to="{ name: 'Add transaction' }"
+          :to="{ name: 'AddTransaction' }"
           >Add transaction</router-link
         >
       </ul>
