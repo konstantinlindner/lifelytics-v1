@@ -4,6 +4,7 @@ import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import AddTransaction from "../views/AddTransaction.vue";
 import Profile from "../views/Profile.vue";
+import Transactions from "../views/Transactions.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/transactions",
+    name: "Transactions",
+    component: Transactions,
   },
 ];
 

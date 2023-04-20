@@ -4,6 +4,7 @@ import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
 import store from "../store/index.js";
+
 export default {
   name: "addTransaction",
   setup() {

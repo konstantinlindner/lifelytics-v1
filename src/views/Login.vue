@@ -90,7 +90,7 @@ export default {
       </div>
       <button
         type="submit"
-        class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-200 hover:bg-dark-light-green mb-4"
+        class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-300 hover:bg-dark-light-green mb-4"
       >
         Sign in
       </button>
