@@ -17,7 +17,7 @@ export default {
       <div class="flex flex-row items-center ml-5">
         <router-link
           class="bg-light-light-green duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-          :to="{ name: 'Accommodation' }"
+          :to="{ name: 'AddTransaction' }"
         >
           <Icon icon="mdi:plus" width="20" />
           <p class="ml-1.5">Add accommodation</p>
