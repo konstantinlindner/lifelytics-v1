@@ -9,7 +9,7 @@ export default {
   components: {},
   setup() {
     const user = computed(() => store.state.user);
-    console.log(user);
+
     const router = useRouter();
 
     // If already logged in, redirect to home

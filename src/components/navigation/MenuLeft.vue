@@ -1,5 +1,5 @@
 <script>
-import store from "../store/index.js";
+import store from "../../store/index.js";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 
@@ -17,29 +17,29 @@ duration-200 hover:bg-dark-light-green mb-4"
 
 <template>
   <nav class="bg-light-light-grey h-screen w-72">
-    <menu class="flex flex-col space-y-2 px-5 py-5">
+    <menu class="flex flex-col space-y-1 px-5 py-5">
       <li>
         <div class="flex flex-row items-center">
           <router-link
             class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
             :to="{ name: 'Home' }"
           >
-            <Icon icon="mdi-light:home" />
-            <p class="ml-2">Home</p>
+            <Icon icon="mdi:home" width="20" />
+            <p class="ml-1.5">Home</p>
           </router-link>
         </div>
       </li>
 
       <li>
-        <router-link class="cursor-pointer" :to="{ name: 'Transactions' }">
-          Transactions</router-link
-        >
-      </li>
-
-      <li>
-        <router-link class="cursor-pointer" :to="{ name: 'AddTransaction' }"
-          >Add transaction</router-link
-        >
+        <div class="flex flex-row items-center">
+          <router-link
+            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            :to="{ name: 'Transactions' }"
+          >
+            <Icon icon="mdi:cash" width="20" />
+            <p class="ml-1.5">Transactions</p>
+          </router-link>
+        </div>
       </li>
     </menu>
   </nav>

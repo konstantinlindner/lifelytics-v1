@@ -1,5 +1,8 @@
 <script>
+import { Icon } from "@iconify/vue";
+
 export default {
+  components: { Icon },
   setup() {},
 };
 </script>
@@ -7,10 +10,14 @@ export default {
 <template>
   <header class="bg-light-green w-72 h-24 flex items-center justify-center">
     <router-link
-      class="cursor-pointer select-none flex items-center justify-center gap-x-4"
+      class="cursor-pointer select-none flex items-center gap-x-3"
       :to="{ name: 'Home' }"
     >
-      <img class="h-14" src="../assets/logo.png" />
+      <Icon
+        icon="streamline:health-medical-heart-rate-health-beauty-information-data-beat-pulse-monitor-heart-rate-info"
+        width="50"
+      />
+
       <h1 class="text-xl">
         <span class="font-normal">life</span
         ><span class="font-thin">lytics</span>

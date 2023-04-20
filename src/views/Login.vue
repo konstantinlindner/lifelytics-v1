@@ -34,7 +34,6 @@ export default {
 
     // Set user const
     const user = computed(() => store.state.user);
-    console.log(user);
 
     // If already logged in, redirect to home
 

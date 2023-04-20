@@ -1,18 +1,18 @@
 <script>
-import Navigation from "./components/Navigation.vue";
+import MenuTop from "./components/Navigation/MenuTop.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 import Register from "./views/Register.vue";
 import { supabase } from "./supabase.js";
 import store from "./store/index.js";
-import MenuLeft from "./components/MenuLeft.vue";
+import MenuLeft from "./components/Navigation/MenuLeft.vue";
 import { computed } from "vue";
 import Logo from "./components/Logo.vue";
 import AddTransaction from "./views/AddTransaction.vue";
 
 export default {
   components: {
-    Navigation,
+    MenuTop,
     Home,
     Login,
     Register,
@@ -49,7 +49,7 @@ export default {
     <div class="flex">
       <div><logo /></div>
       <div class="w-screen">
-        <Navigation />
+        <MenuTop />
       </div>
     </div>
     <div class="flex">

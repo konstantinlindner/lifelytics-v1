@@ -8,7 +8,6 @@ export default {
   components: {},
   setup() {
     const user = computed(() => store.state.user);
-    console.log(user);
 
     async function getUserData() {
       const {

@@ -18,7 +18,6 @@ export default {
     // Set user const
 
     const user = computed(() => store.state.user);
-    console.log(user);
 
     // If not logged in, redirect to sign in page
 
