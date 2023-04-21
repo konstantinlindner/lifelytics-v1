@@ -5,10 +5,24 @@ import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
 import Logo from "./Logo.vue";
+import ProfileMenu from "./ProfileMenu.vue";
 
 export default {
   name: "MenuTop",
-  components: { Icon, Logo },
+  components: { Icon, Logo, ProfileMenu },
+  data() {
+    return {
+      isMenuVisible: false,
+    };
+  },
+  methods: {
+    showMenu() {
+      this.isMenuVisible = true;
+    },
+    closeMenu() {
+      this.isMenuVisible = false;
+    },
+  },
   setup() {
     // get user from store
     const user = computed(() => store.state.user);
@@ -57,21 +71,16 @@ export default {
         </div>
       </li>
 
-      <router-link v-if="user" class="cursor-pointer" :to="{ name: 'Profile' }"
-        >Profile</router-link
-      >
-
-      <li v-if="user" @click="logout" class="cursor-pointer list-none">
-        Sign out
-      </li>
-
       <button
         v-if="user"
-        class="bg-dark-light-green hover:bg-light-blue duration-300 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
-        @click="logout"
+        class="bg-light-green hover:bg-dark-light-green duration-300 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
+        @click="showMenu"
       >
         <Icon icon="mdi:account" width="24" />
       </button>
     </nav>
   </header>
+  <div class="w-28 absolute right-2 top-16">
+    <ProfileMenu v-show="isMenuVisible" @close="closeMenu" />
+  </div>
 </template>

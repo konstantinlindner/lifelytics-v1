@@ -20,7 +20,7 @@ export default {
       <div class="bg-white shadow-lg rounded-md">
         <div class="flex flex-col mx-2 my-2 w-80 h-40">
           <header class="ml-auto">
-            <button type="button" class="" @click="close">
+            <button type="button" @click="close">
               <Icon icon="mdi:close" />
             </button>
           </header>

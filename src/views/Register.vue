@@ -72,7 +72,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="!user" class="max-w-sm mx-auto px-4 py-10">
+  <div v-if="!user" class="w-96 mx-auto py-10">
     <!-- Error Handling -->
 
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">

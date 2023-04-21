@@ -24,18 +24,21 @@ export default {
 
 <template>
   <div v-if="!user">
-    <header class="px-10 pt-8">
+    <header class="px-20 pt-8">
       <h1 class="text-xl">Welcome to lifelytics!</h1>
     </header>
-    <body class="px-10 pt-8">
-      <p>Please sign in to continue.</p>
+    <body class="px-20 pt-8">
+      <p>Sign in or create an account to continue.</p>
     </body>
   </div>
 
   <div v-else>
-    <header class="px-10 pt-8">
-      <h1 class="text-xl">Home</h1>
-    </header>
+    <span>
+      <header class="px-10 pt-8">
+        <h1 class="text-xl">Grove Street - Home</h1>
+        <p>At least it was before I fucked everything up.</p>
+      </header>
+    </span>
     <body class="px-10 pt-8">
       <p>
         <span>Welcome back </span><span class="italic">{{ user.email }}</span>
