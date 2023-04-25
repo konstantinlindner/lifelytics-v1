@@ -6,21 +6,22 @@ import { useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
 import Logo from "./Logo.vue";
 import ProfileMenu from "./ProfileMenu.vue";
+import { ref } from "vue";
 
 export default {
   name: "MenuTop",
   components: { Icon, Logo, ProfileMenu },
   data() {
     return {
-      isMenuVisible: false,
+      isMenuVisible: ref(false),
     };
   },
   methods: {
     showMenu() {
-      this.isMenuVisible = true;
+      this.isMenuVisible = ref(true);
     },
     closeMenu() {
-      this.isMenuVisible = false;
+      this.isMenuVisible = ref(false);
     },
   },
   setup() {
@@ -43,7 +44,9 @@ export default {
 
 <template>
   <header class="flex flex-row h-24">
-    <div class="mr-auto" v-if="!user"><Logo /></div>
+    <div v-if="!user" class="flex justify-center item-center h-24 w-72">
+      <Logo />
+    </div>
     <nav
       class="h-24 mx-8 gap-x-1 flex flex-row items-center justify-end ml-auto"
     >

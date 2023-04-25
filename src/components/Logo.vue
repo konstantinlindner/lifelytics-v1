@@ -4,12 +4,19 @@ import { Icon } from "@iconify/vue";
 export default {
   name: "Logo",
   components: { Icon },
+  props: {
+    hideText: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   setup() {},
 };
 </script>
 
 <template>
-  <header class="w-72 h-24 flex items-center justify-center">
+  <header class="flex items-center justify-center">
     <router-link
       class="cursor-pointer select-none flex items-center gap-x-3"
       :to="{ name: 'Home' }"
@@ -19,7 +26,7 @@ export default {
         width="50"
       />
 
-      <h1 class="text-xl">
+      <h1 v-if="!hideText" class="text-xl">
         <span class="font-normal">life</span
         ><span class="font-thin">lytics</span>
       </h1>
