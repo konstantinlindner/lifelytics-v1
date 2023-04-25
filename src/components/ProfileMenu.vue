@@ -28,29 +28,23 @@ export default {
 
 <template>
   <div class="bg-white shadow-lg rounded-md">
-    <div class="flex flex-col mx-2 my-2 w-40">
-      <header class="ml-auto"></header>
-
-      <router-link
-        @click="close"
-        class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-        :to="{ name: 'Profile' }"
-      >
-        <Icon icon="mdi:home" width="20" />
-        <p class="ml-1.5">Profile</p>
-      </router-link>
-    </div>
+    <router-link
+      @click="close"
+      class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
+      :to="{ name: 'Profile' }"
+    >
+      <Icon icon="mdi:home" width="20" />
+      <p class="ml-1.5">Profile</p>
+    </router-link>
 
     <li class="list-none">
-      <div class="flex flex-row items-center">
-        <button
-          @click="logout"
-          class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-        >
-          <Icon icon="mdi:login" width="20" />
-          <p class="ml-1.5">Sign out</p>
-        </button>
-      </div>
+      <button
+        @click="logout"
+        class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
+      >
+        <Icon icon="mdi:login" width="20" />
+        <p class="ml-1.5">Sign out</p>
+      </button>
     </li>
   </div>
 </template>

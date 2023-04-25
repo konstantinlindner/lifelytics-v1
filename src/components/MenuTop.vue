@@ -80,7 +80,7 @@ export default {
       </button>
     </nav>
   </header>
-  <div class="w-28 absolute right-2 top-16">
+  <div class="absolute right-2 top-16">
     <ProfileMenu v-show="isMenuVisible" @close="closeMenu" />
   </div>
 </template>
