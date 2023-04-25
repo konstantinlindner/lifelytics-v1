@@ -7,6 +7,7 @@ import Profile from "../views/Profile.vue";
 import Transactions from "../views/Transactions.vue";
 import Flights from "../views/Flights.vue";
 import Accommodation from "../views/Accommodation.vue";
+import AddItem from "../views/AddItem.vue";
 
 const routes = [
   {
@@ -24,11 +25,7 @@ const routes = [
     name: "Register",
     component: Register,
   },
-  {
-    path: "/add-transaction",
-    name: "AddTransaction",
-    component: AddTransaction,
-  },
+
   {
     path: "/profile",
     name: "Profile",
@@ -48,6 +45,16 @@ const routes = [
     path: "/accommodation",
     name: "Accommodation",
     component: Accommodation,
+  },
+  {
+    path: "/add-transaction",
+    name: "AddTransaction",
+    component: AddTransaction,
+  },
+  {
+    path: "/add-item",
+    name: "AddItem",
+    component: AddItem,
   },
 ];
 

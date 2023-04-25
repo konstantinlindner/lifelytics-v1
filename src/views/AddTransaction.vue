@@ -45,10 +45,10 @@ export default {
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
 
-    <!-- Login -->
+    <!-- Form -->
 
     <form
-      class="max-w-screen-sm p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
+      class="max-w-screen-sm p-8 flex flex-col bg-light-light-grey rounded-md shadow-lg"
     >
       <h1 class="text-3xl mb-4">New transaction</h1>
 
