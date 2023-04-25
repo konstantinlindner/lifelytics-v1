@@ -45,7 +45,7 @@ export default {
               :to="{ name: 'AddItem' }"
             >
               <Icon icon="mdi:plus" width="20" />
-              <p class="ml-1.5">Add item</p>
+              <p class="ml-1.5">Add record</p>
             </router-link>
           </div>
         </div>
