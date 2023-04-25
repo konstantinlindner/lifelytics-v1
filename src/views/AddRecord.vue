@@ -1,5 +1,4 @@
 <script>
-import { ref } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
@@ -7,7 +6,7 @@ import store from "../store/index.js";
 import { Icon } from "@iconify/vue";
 
 export default {
-  name: "AddItem",
+  name: "AddRecord",
   components: { Icon },
   setup() {
     // create data / vars
@@ -25,7 +24,7 @@ export default {
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) {
-        router.push({ name: "Login" });
+        router.push({ name: "SignIn" });
       }
     }
 

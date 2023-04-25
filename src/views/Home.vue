@@ -29,11 +29,11 @@ export default {
       <h1 class="text-xl">Welcome to lifelytics!</h1>
     </header>
     <body class="px-20 pt-8">
-      <router-link :to="{ name: 'Login' }">
+      <router-link :to="{ name: 'SignIn' }">
         <span class="text-dark-light-green">Sign in</span></router-link
       >
       or
-      <router-link :to="{ name: 'Register' }">
+      <router-link :to="{ name: 'SignUp' }">
         <span class="text-dark-light-green">
           create an account</span
         ></router-link
@@ -51,7 +51,7 @@ export default {
           <div class="flex flex-row items-center ml-5">
             <router-link
               class="bg-light-light-green duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-              :to="{ name: 'AddItem' }"
+              :to="{ name: 'AddRecord' }"
             >
               <Icon icon="mdi:plus" width="20" />
               <p class="ml-1.5">Add record</p>

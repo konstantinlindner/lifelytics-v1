@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { computed } from "vue";
 import store from "../store/index.js";
 export default {
-  name: "Register",
+  name: "signUp",
   setup() {
     // create data / vars
 
@@ -18,9 +18,9 @@ export default {
     const confirmPassword = ref(null);
     const errorMsg = ref(null);
 
-    // register function
+    // signUp function
 
-    const register = async () => {
+    const signUp = async () => {
       if (password.value === confirmPassword.value) {
         try {
           const { error } = await supabase.auth.signUp({
@@ -28,7 +28,7 @@ export default {
             password: password.value,
           });
           if (error) throw error;
-          router.push({ name: "Login" });
+          router.push({ name: "SignIn" });
         } catch (error) {
           errorMsg.value = error.message;
           setTimeout(() => {
@@ -64,7 +64,7 @@ export default {
       email,
       password,
       errorMsg,
-      register,
+      signUp,
       user,
     };
   },
@@ -79,13 +79,13 @@ export default {
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
 
-    <!-- Register -->
+    <!-- signUp -->
 
     <form
-      @submit.prevent="register"
+      @submit.prevent="signUp"
       class="p-8 flex flex-col bg-light-grey rounded-md"
     >
-      <h1 class="text-3xl mb-4">Register</h1>
+      <h1 class="text-3xl mb-4">signUp</h1>
 
       <div class="flex flex-col mb-2">
         <label for="firstName" class="mb-1 text-sm">First name</label>
@@ -147,10 +147,10 @@ export default {
         type="submit"
         class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-300 hover:bg-dark-light-green mb-4"
       >
-        Register
+        signUp
       </button>
       <div class="flex justify-center">
-        <router-link class="text-sm mt-5" :to="{ name: 'Login' }"
+        <router-link class="text-sm mt-5" :to="{ name: 'SignIn' }"
           >Already have an account?
           <span class="text-dark-light-green">Sign in</span></router-link
         >

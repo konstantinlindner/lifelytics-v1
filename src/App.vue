@@ -1,13 +1,14 @@
 <script>
-import MenuTop from "./components/MenuTop.vue";
-import Login from "./views/Login.vue";
-import Home from "./views/Home.vue";
-import Register from "./views/Register.vue";
 import { supabase } from "./supabase.js";
 import store from "./store/index.js";
-import MenuLeft from "./components/MenuLeft.vue";
+
 import { computed } from "vue";
-import Logo from "./components/Logo.vue";
+import MenuTop from "./components/MenuTop.vue";
+import SignIn from "./views/SignIn.vue";
+import Home from "./views/Home.vue";
+import SignUp from "./views/SignUp.vue";
+import MenuSide from "./components/MenuSide.vue";
+import AppLogo from "./components/AppLogo.vue";
 import AddTransaction from "./views/AddTransaction.vue";
 import Flights from "./views/Flights.vue";
 import Accommodation from "./views/Accommodation.vue";
@@ -16,10 +17,10 @@ export default {
   components: {
     MenuTop,
     Home,
-    Login,
-    Register,
-    MenuLeft,
-    Logo,
+    SignIn,
+    SignUp,
+    MenuSide,
+    AppLogo,
     AddTransaction,
     Flights,
     Accommodation,
@@ -51,7 +52,7 @@ export default {
 
 <template>
   <div class="font-Roboto box-border flex h-screen w-screen">
-    <MenuLeft />
+    <MenuSide />
 
     <div class="flex flex-col w-screen">
       <MenuTop />

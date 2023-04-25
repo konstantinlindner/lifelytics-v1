@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Login from "../views/Login.vue";
-import Register from "../views/Register.vue";
+import SignIn from "../views/SignIn.vue";
+import SignUp from "../views/SignUp.vue";
 import AddTransaction from "../views/AddTransaction.vue";
 import Profile from "../views/Profile.vue";
 import Transactions from "../views/Transactions.vue";
 import Flights from "../views/Flights.vue";
 import Accommodation from "../views/Accommodation.vue";
-import AddItem from "../views/AddItem.vue";
+import AddRecord from "../views/AddRecord.vue";
 import Settings from "../views/Settings.vue";
 
 const routes = [
@@ -17,14 +17,14 @@ const routes = [
     component: Home,
   },
   {
-    path: "/login",
-    name: "Login",
-    component: Login,
+    path: "/sign-in",
+    name: "SignIn",
+    component: SignIn,
   },
   {
-    path: "/register",
-    name: "Register",
-    component: Register,
+    path: "/sign-up",
+    name: "SignUp",
+    component: SignUp,
   },
 
   {
@@ -58,9 +58,9 @@ const routes = [
     component: AddTransaction,
   },
   {
-    path: "/add-item",
-    name: "AddItem",
-    component: AddItem,
+    path: "/add-record",
+    name: "AddRecord",
+    component: AddRecord,
   },
 ];
 

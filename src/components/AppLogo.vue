@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 
 export default {
-  name: "Logo",
+  name: "AppLogo",
   components: { Icon },
   props: {
     hideText: {

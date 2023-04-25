@@ -2,12 +2,12 @@
 import store from "../store/index.js";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
-import Logo from "./Logo.vue";
+import AppLogo from "./AppLogo.vue";
 import { ref } from "vue";
 
 export default {
-  name: "MenuLeft",
-  components: { Icon, Logo },
+  name: "MenuSide",
+  components: { Icon, AppLogo },
   setup() {
     const user = computed(() => store.state.user);
 
@@ -29,7 +29,7 @@ export default {
   <div v-if="user" class="flex flex-col h-screen border-r">
     <div v-if="isExpanded">
       <div class="flex justify-center item-center h-24 w-72">
-        <Logo />
+        <AppLogo />
       </div>
       <nav>
         <menu class="flex flex-col space-y-1 px-5 py-5">
@@ -80,7 +80,7 @@ export default {
 
     <div v-else>
       <div class="flex justify-center item-center h-24 w-24">
-        <Logo :hideText="true" />
+        <AppLogo :hideText="true" />
       </div>
 
       <nav class="flex flex-col space-y-2 mx-5 my-5">

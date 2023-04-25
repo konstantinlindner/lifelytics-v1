@@ -4,17 +4,14 @@ import { computed } from "vue";
 import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
-import Logo from "./Logo.vue";
-import ProfileMenu from "./ProfileMenu.vue";
+import AppLogo from "./AppLogo.vue";
+import MenuTopProfile from "./MenuTopProfile.vue";
 import { ref } from "vue";
 
 export default {
   name: "MenuTop",
-  components: { Icon, Logo, ProfileMenu },
-  data() {
-    return {};
-  },
-  methods: {},
+  components: { Icon, AppLogo, MenuTopProfile },
+
   setup() {
     // get user from store
     const user = computed(() => store.state.user);
@@ -22,8 +19,8 @@ export default {
     // setup ref to router
     const router = useRouter();
 
-    // logout function
-    const logout = async () => {
+    // sign out function
+    const signOut = async () => {
       await supabase.auth.signOut();
       router.push({ name: "Home" });
     };
@@ -41,7 +38,7 @@ export default {
     };
 
     return {
-      logout,
+      signOut,
       user,
       isProfileMenuVisible,
       toggleProfileMenu,
@@ -52,48 +49,47 @@ export default {
 </script>
 
 <template>
-  <header class="flex flex-row h-24">
-    <div v-if="!user" class="flex justify-center item-center h-24 w-72">
-      <Logo />
+  <!-- <div class="flex">
+    <AppLogo class="h-24 w-72" />
+    <h1 class="ml-auto mr-5 my-auto">hello</h1>
+  </div> -->
+
+  <div v-if="!user" class="flex">
+    <AppLogo class="h-24 w-72" />
+
+    <div class="flex ml-auto mr-8 my-auto">
+      <router-link
+        v-if="!user"
+        class="w-fit duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+        :to="{ name: 'Home' }"
+      >
+        <Icon icon="mdi:home" width="20" />
+        <p class="ml-1.5">Home</p>
+      </router-link>
+
+      <router-link
+        v-if="!user"
+        class="w-fit duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+        :to="{ name: 'SignIn' }"
+      >
+        <Icon icon="mdi:login" width="20" />
+        <p class="ml-1.5">Sign in</p>
+      </router-link>
     </div>
-    <nav
-      class="h-24 mx-8 gap-x-1 flex flex-row items-center justify-end ml-auto"
-    >
-      <li v-if="!user" class="list-none">
-        <div class="flex flex-row items-center">
-          <router-link
-            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-            :to="{ name: 'Home' }"
-          >
-            <Icon icon="mdi:home" width="20" />
-            <p class="ml-1.5">Home</p>
-          </router-link>
-        </div>
-      </li>
+  </div>
 
-      <li v-if="!user" class="list-none">
-        <div class="flex flex-row items-center">
-          <router-link
-            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-            :to="{ name: 'Login' }"
-          >
-            <Icon icon="mdi:login" width="20" />
-            <p class="ml-1.5">Sign in</p>
-          </router-link>
-        </div>
-      </li>
-
+  <div v-else class="flex h-24">
+    <div class="flex my-auto ml-auto mr-8">
       <button
-        v-if="user"
         class="bg-light-green hover:bg-dark-light-green duration-300 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
         @click="toggleProfileMenu"
       >
         <Icon icon="mdi:account" width="24" />
       </button>
-    </nav>
-  </header>
+    </div>
+  </div>
 
   <div class="absolute right-2 top-20">
-    <ProfileMenu v-show="isProfileMenuVisible" />
+    <MenuTopProfile v-show="isProfileMenuVisible" />
   </div>
 </template>

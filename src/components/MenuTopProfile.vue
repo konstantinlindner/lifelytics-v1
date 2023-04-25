@@ -4,24 +4,20 @@ import { supabase } from "../supabase.js";
 import { useRouter } from "vue-router";
 
 export default {
-  name: "ProfileMenu",
+  name: "MenuTopProfile",
   components: { Icon },
-  methods: {
-    close() {
-      this.$emit("close");
-    },
-  },
+
   setup() {
     // setup ref to router
     const router = useRouter();
 
-    // logout function
-    const logout = async () => {
+    // sign out function
+    const signOut = async () => {
       await supabase.auth.signOut();
       router.push({ name: "Home" });
     };
 
-    return { logout };
+    return { signOut };
   },
 };
 </script>
@@ -29,7 +25,7 @@ export default {
 <template>
   <div class="bg-white shadow-lg rounded-md">
     <router-link
-      @click="close"
+      @click=""
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
       :to="{ name: 'Profile' }"
     >
@@ -38,7 +34,7 @@ export default {
     </router-link>
 
     <router-link
-      @click="close"
+      @click=""
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
       :to="{ name: 'Settings' }"
     >
@@ -47,7 +43,7 @@ export default {
     </router-link>
 
     <button
-      @click="logout"
+      @click="signOut"
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
     >
       <Icon icon="mdi:login" width="20" />

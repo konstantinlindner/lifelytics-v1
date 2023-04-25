@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { computed } from "vue";
 import store from "../store/index.js";
 export default {
-  name: "Login",
+  name: "SignIn",
   setup() {
     // create data / vars
 
@@ -14,9 +14,9 @@ export default {
     const password = ref(null);
     const errorMsg = ref(null);
 
-    // login function
+    // signIn function
 
-    const login = async () => {
+    const signIn = async () => {
       try {
         const { error } = await supabase.auth.signInWithPassword({
           email: email.value,
@@ -48,7 +48,7 @@ export default {
 
     redirectSignedIn();
 
-    return { email, password, errorMsg, login, user };
+    return { email, password, errorMsg, signIn, user };
   },
 };
 </script>
@@ -59,9 +59,9 @@ export default {
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey">
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
-    <!-- Login -->
+    <!-- signIn -->
     <form
-      @submit.prevent="login"
+      @submit.prevent="signIn"
       class="p-8 flex flex-col bg-light-grey rounded-md"
     >
       <h1 class="text-3xl mb-4">Welcome back</h1>
@@ -94,7 +94,7 @@ export default {
         Sign in
       </button>
       <div class="flex justify-center">
-        <router-link class="text-sm mt-5" :to="{ name: 'Register' }"
+        <router-link class="text-sm mt-5" :to="{ name: 'SignUp' }"
           >Don't have an account?
           <span class="text-dark-light-green">Sign up</span></router-link
         >

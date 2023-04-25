@@ -1,21 +1,21 @@
 <script>
 import { Icon } from "@iconify/vue";
-import Modal from "../components/Modal.vue";
+import AppModal from "../components/AppModal.vue";
 
 export default {
   name: "Transactions",
-  components: { Icon, Modal },
+  components: { Icon, AppModal },
   data() {
     return {
-      isModalVisible: false,
+      isAppModalVisible: false,
     };
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
+    showAppModal() {
+      this.isAppModalVisible = true;
     },
-    closeModal() {
-      this.isModalVisible = false;
+    closeAppModal() {
+      this.isAppModalVisible = false;
     },
   },
   setup() {
@@ -31,7 +31,7 @@ export default {
       <div class="flex flex-row items-center ml-5">
         <button
           class="bg-light-light-green duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
-          @click="showModal"
+          @click="showAppModal"
         >
           <Icon icon="mdi:plus" width="20" />
           <p class="ml-1.5">Add transaction</p>
@@ -40,7 +40,7 @@ export default {
     </div>
   </header>
 
-  <Modal v-show="isModalVisible" @close="closeModal" />
+  <AppModal v-show="isAppModalVisible" @close="closeAppModal" />
 
   <body class="px-10 pt-8">
     Below is a table of all transactions.
