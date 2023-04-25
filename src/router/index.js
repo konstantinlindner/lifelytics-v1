@@ -8,6 +8,7 @@ import Transactions from "../views/Transactions.vue";
 import Flights from "../views/Flights.vue";
 import Accommodation from "../views/Accommodation.vue";
 import AddItem from "../views/AddItem.vue";
+import Settings from "../views/Settings.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: Settings,
   },
   {
     path: "/transactions",
