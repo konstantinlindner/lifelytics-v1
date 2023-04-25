@@ -45,7 +45,7 @@ export default {
   <header class="flex flex-row h-24">
     <div class="mr-auto" v-if="!user"><Logo /></div>
     <nav
-      class="h-24 mx-5 gap-x-1 flex flex-row items-center justify-end ml-auto"
+      class="h-24 mx-8 gap-x-1 flex flex-row items-center justify-end ml-auto"
     >
       <li v-if="!user" class="list-none">
         <div class="flex flex-row items-center">
@@ -80,7 +80,7 @@ export default {
       </button>
     </nav>
   </header>
-  <div class="absolute right-2 top-16">
+  <div class="absolute right-2 top-20">
     <ProfileMenu v-show="isMenuVisible" @close="closeMenu" />
   </div>
 </template>
