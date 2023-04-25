@@ -38,7 +38,7 @@ export default {
 
 <template>
   <div v-if="user" class="px-4 py-4 mx-auto">
-    <div class="min-w-max p-4 bg-light-light-grey rounded-md shadow-md">
+    <div class="min-w-max p-4 bg-light-light-grey rounded-md">
       <h1 class="text-xl mb-6 flex justify-center">Choose category</h1>
       <div class="min-w-max grid gap-4 grid-cols-3 rounded-md">
         <button

@@ -56,13 +56,13 @@ export default {
 <template>
   <div v-if="!user" class="w-96 mx-auto py-10">
     <!-- Error Handling -->
-    <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey shadow-lg">
+    <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey">
       <p class="text-red-500">{{ errorMsg }}</p>
     </div>
     <!-- Login -->
     <form
       @submit.prevent="login"
-      class="p-8 flex flex-col bg-light-grey rounded-md shadow-lg"
+      class="p-8 flex flex-col bg-light-grey rounded-md"
     >
       <h1 class="text-3xl mb-4">Welcome back</h1>
 
