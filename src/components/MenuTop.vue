@@ -12,18 +12,9 @@ export default {
   name: "MenuTop",
   components: { Icon, Logo, ProfileMenu },
   data() {
-    return {
-      isMenuVisible: ref(false),
-    };
+    return {};
   },
-  methods: {
-    showMenu() {
-      this.isMenuVisible = ref(true);
-    },
-    closeMenu() {
-      this.isMenuVisible = ref(false);
-    },
-  },
+  methods: {},
   setup() {
     // get user from store
     const user = computed(() => store.state.user);
@@ -37,7 +28,25 @@ export default {
       router.push({ name: "Home" });
     };
 
-    return { logout, user };
+    // profile menu
+
+    const isProfileMenuVisible = ref(false);
+
+    const toggleProfileMenu = () => {
+      isProfileMenuVisible.value = !isProfileMenuVisible.value;
+    };
+
+    const closeProfileMenu = () => {
+      isProfileMenuVisible.value = false;
+    };
+
+    return {
+      logout,
+      user,
+      isProfileMenuVisible,
+      toggleProfileMenu,
+      closeProfileMenu,
+    };
   },
 };
 </script>
@@ -77,13 +86,14 @@ export default {
       <button
         v-if="user"
         class="bg-light-green hover:bg-dark-light-green duration-300 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
-        @click="showMenu"
+        @click="toggleProfileMenu"
       >
         <Icon icon="mdi:account" width="24" />
       </button>
     </nav>
   </header>
+
   <div class="absolute right-2 top-20">
-    <ProfileMenu v-show="isMenuVisible" @close="closeMenu" />
+    <ProfileMenu v-show="isProfileMenuVisible" />
   </div>
 </template>
