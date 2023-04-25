@@ -67,5 +67,5 @@ export default {
       </p>
     </body>
   </div>
-  <img class="mt-20 m-auto" src="../assets/data.svg" width="450" />
+  <img class="mt-20 px-10 m-auto" src="../assets/data.svg" width="450" />
 </template>
