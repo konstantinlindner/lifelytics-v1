@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="user" class="px-4 py-4 flex item-center justify-center">
+  <div v-if="user" class="px-4 py-4 mx-auto">
     <div
       class="min-w-max p-4 grid gap-4 grid-cols-3 bg-light-light-grey rounded-md shadow-lg"
     >
