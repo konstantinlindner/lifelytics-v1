@@ -39,7 +39,7 @@ export default {
 <template>
   <div v-if="user" class="px-4 py-4 flex item-center justify-center">
     <div
-      class="max-w-xl p-4 grid gap-4 grid-cols-3 bg-light-light-grey rounded-md shadow-lg"
+      class="min-w-max p-4 grid gap-4 grid-cols-3 bg-light-light-grey rounded-md shadow-lg"
     >
       <button
         class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
