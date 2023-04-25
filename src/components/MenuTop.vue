@@ -62,7 +62,7 @@ export default {
       <li v-if="!user" class="list-none">
         <div class="flex flex-row items-center">
           <router-link
-            class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
             :to="{ name: 'Home' }"
           >
             <Icon icon="mdi:home" width="20" />
@@ -74,7 +74,7 @@ export default {
       <li v-if="!user" class="list-none">
         <div class="flex flex-row items-center">
           <router-link
-            class="duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+            class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
             :to="{ name: 'Login' }"
           >
             <Icon icon="mdi:login" width="20" />

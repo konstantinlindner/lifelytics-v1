@@ -29,7 +29,16 @@ export default {
       <h1 class="text-xl">Welcome to lifelytics!</h1>
     </header>
     <body class="px-20 pt-8">
-      <p>Sign in or create an account to continue.</p>
+      <router-link :to="{ name: 'Login' }">
+        <span class="text-dark-light-green">Sign in</span></router-link
+      >
+      or
+      <router-link :to="{ name: 'Register' }">
+        <span class="text-dark-light-green">
+          create an account</span
+        ></router-link
+      >
+      to continue.
     </body>
   </div>
 
