@@ -26,9 +26,14 @@ export default {
 <template>
   <div v-if="!user">
     <header class="px-20 pt-8">
-      <h1 class="text-xl">Welcome to lifelytics!</h1>
+      <h1 class="text-xl">Manage your life like a pro</h1>
     </header>
-    <body class="px-20 pt-8">
+    <body class="px-20 pt-6">
+      <p class="pb-2">
+        A base for your productivity and well-being as well as a tool to track
+        your personal finances and life stats.
+      </p>
+
       <router-link :to="{ name: 'SignIn' }">
         <span class="text-dark-light-green">Sign in</span></router-link
       >
