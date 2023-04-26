@@ -50,7 +50,7 @@ export default {
   <div v-else>
     <span>
       <header class="flex px-10 pt-8">
-        <h1 class="text-xl">Grove Street - Home</h1>
+        <h1 class="text-xl">Home</h1>
 
         <div class="flex flex-row justify-end ml-auto">
           <div class="flex flex-row items-center ml-5">
@@ -66,7 +66,6 @@ export default {
       </header>
     </span>
     <body class="px-10 pt-8">
-      <p>At least it was before I fucked everything up.</p>
       <p>
         <span>Welcome back </span><span class="italic">{{ user.email }}</span>
       </p>
