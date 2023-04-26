@@ -30,8 +30,8 @@ export default {
     </header>
     <body class="px-20 pt-6">
       <p class="pb-2">
-        A base for your productivity and well-being as well as a tool to track
-        your personal finances and life stats.
+        A base for your productivity and well-being. Track and visualize your
+        personal finances, health and life stats in one tool.
       </p>
 
       <router-link :to="{ name: 'SignIn' }">
