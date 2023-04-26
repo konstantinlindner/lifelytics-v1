@@ -43,11 +43,11 @@ export default {
     <p class="mx-auto py-5">or</p>
 
     <div class="mx-auto max-w-max">
+      <!-- <AddRecordFinancialExpenseCategory /> -->
+
       <AddRecordType />
 
       <!-- <AddRecordFinancialType /> -->
-
-      <!-- <AddRecordFinancialExpenseCategory /> -->
 
       <!-- <AddRecordFinancialTransaction /> -->
 
