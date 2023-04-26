@@ -83,9 +83,10 @@ export default {
 
     <form
       @submit.prevent="signUp"
-      class="p-8 flex flex-col bg-light-grey rounded-md"
+      class="p-8 flex flex-col bg-light-light-grey rounded-md"
     >
-      <h1 class="text-3xl mb-4">signUp</h1>
+      <h1 class="text-2xl mx-auto mb-2">Create your account</h1>
+      <p class="mx-auto mb-5">It's free and only takes a minute</p>
 
       <div class="flex flex-col mb-2">
         <label for="firstName" class="mb-1 text-sm">First name</label>
@@ -147,7 +148,7 @@ export default {
         type="submit"
         class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-300 hover:bg-dark-light-green mb-4"
       >
-        signUp
+        Sign up
       </button>
       <div class="flex justify-center">
         <router-link class="text-sm mt-5" :to="{ name: 'SignIn' }"

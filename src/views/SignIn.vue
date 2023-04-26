@@ -62,9 +62,10 @@ export default {
     <!-- signIn -->
     <form
       @submit.prevent="signIn"
-      class="p-8 flex flex-col bg-light-grey rounded-md"
+      class="p-8 flex flex-col bg-light-light-grey rounded-md"
     >
-      <h1 class="text-3xl mb-4">Welcome back</h1>
+      <h1 class="text-2xl mx-auto mb-2">Welcome back</h1>
+      <p class="mx-auto mb-5">Enter your details below</p>
 
       <div class="flex flex-col mb-2">
         <label for="email" class="mb-1 text-sm">Email</label>
