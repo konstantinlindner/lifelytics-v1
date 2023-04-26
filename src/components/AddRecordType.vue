@@ -40,7 +40,7 @@ export default {
     >
       <button
         class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
-        @click="goToHealth"
+        @click=""
       >
         <p class="text-sm absolute top-2 left-3">1</p>
         <Icon class="mx-auto" icon="mdi:heart" width="80" />
@@ -49,7 +49,7 @@ export default {
 
       <button
         class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
-        @click="goToFinancial"
+        @click=""
       >
         <p class="text-sm absolute top-2 left-3">2</p>
         <Icon class="mx-auto" icon="mdi:money" width="80" />
