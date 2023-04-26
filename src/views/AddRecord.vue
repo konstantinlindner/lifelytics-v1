@@ -1,8 +1,8 @@
 <script>
-import { supabase } from "../supabase.js";
+import { supabase } from "../supabase.ts";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
-import store from "../store/index.js";
+import store from "../store/index.ts";
 import { Icon } from "@iconify/vue";
 
 export default {

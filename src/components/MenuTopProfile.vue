@@ -1,6 +1,6 @@
 <script>
 import { Icon } from "@iconify/vue";
-import { supabase } from "../supabase.js";
+import { supabase } from "../supabase.ts";
 import { useRouter } from "vue-router";
 
 export default {

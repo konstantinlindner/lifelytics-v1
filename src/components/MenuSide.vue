@@ -1,5 +1,5 @@
 <script>
-import store from "../store/index.js";
+import store from "../store/index.ts";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 import AppLogo from "./AppLogo.vue";

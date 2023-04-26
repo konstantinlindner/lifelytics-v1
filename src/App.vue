@@ -1,6 +1,6 @@
 <script>
-import { supabase } from "./supabase.js";
-import store from "./store/index.js";
+import { supabase } from "./supabase.ts";
+import store from "./store/index.ts";
 
 import { computed } from "vue";
 import MenuTop from "./components/MenuTop.vue";

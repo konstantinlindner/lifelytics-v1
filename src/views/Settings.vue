@@ -1,7 +1,7 @@
 <script>
 import { computed } from "vue";
-import store from "../store/index.js";
-import { supabase } from "../supabase.js";
+import store from "../store/index.ts";
+import { supabase } from "../supabase.ts";
 import { useRouter } from "vue-router";
 
 export default {
