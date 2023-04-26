@@ -55,10 +55,10 @@ export default {
           <li>
             <div class="flex flex-row items-center">
               <router-link
-                class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+                class="duration-300 hover:bg-light-grey rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
                 :to="{ name: 'Home' }"
               >
-                <Icon icon="mdi:home" width="20" />
+                <Icon icon="mdi:home-outline" width="20" />
                 <p class="ml-1.5">Home</p>
               </router-link>
             </div>
@@ -66,30 +66,30 @@ export default {
 
           <li class="flex flex-row items-center">
             <router-link
-              class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+              class="duration-300 hover:bg-light-grey rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
               :to="{ name: 'Transactions' }"
             >
-              <Icon icon="mdi:cash" width="20" />
+              <Icon icon="mdi:playlist-edit" width="20" />
               <p class="ml-1.5">Transactions</p>
             </router-link>
           </li>
 
           <li class="flex flex-row items-center">
             <router-link
-              class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+              class="duration-300 hover:bg-light-grey rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
               :to="{ name: 'Flights' }"
             >
-              <Icon icon="mdi:airplane" width="20" />
+              <Icon icon="mdi:airplane-takeoff" width="20" />
               <p class="ml-1.5">Flights</p>
             </router-link>
           </li>
 
           <li class="flex flex-row items-center">
             <router-link
-              class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+              class="duration-300 hover:bg-light-grey rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
               :to="{ name: 'Accommodation' }"
             >
-              <Icon icon="mdi:home-city" width="20" />
+              <Icon icon="mdi:bed-queen-outline" width="20" />
               <p class="ml-1.5">Accommodation</p>
             </router-link>
           </li>
@@ -102,42 +102,43 @@ export default {
         <AppLogo :hideText="true" />
       </div>
 
-      <nav class="flex flex-col space-y-2 mx-5 my-5">
+      <nav class="flex flex-col space-y-1 mt-5">
         <router-link
-          class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
+          class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Home' }"
         >
-          <Icon icon="mdi:home" width="25" />
+          <Icon icon="mdi:home-outline" width="25" />
         </router-link>
 
         <router-link
-          class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
+          class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Transactions' }"
         >
-          <Icon icon="mdi:cash" width="25" />
+          <Icon icon="mdi:playlist-edit" width="25" />
         </router-link>
 
         <router-link
-          class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
+          class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Flights' }"
         >
-          <Icon icon="mdi:airplane" width="25" />
+          <Icon icon="mdi:airplane-takeoff" width="25" />
         </router-link>
 
         <router-link
-          class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
+          class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Accommodation' }"
         >
-          <Icon icon="mdi:home-city" width="25" />
+          <Icon icon="mdi:bed-queen-outline" width="25" />
         </router-link>
       </nav>
     </div>
 
     <button
       @click="toggleExpansion"
-      class="mt-auto mb-5 mx-auto hover:bg-light-green p-2 rounded-full"
+      class="mt-auto mb-8 mx-auto hover:bg-light-grey p-2 rounded-full duration-300"
     >
       <Icon
+        width="20"
         :icon="
           isExpanded
             ? 'material-symbols:arrow-back-ios-new-rounded'

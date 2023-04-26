@@ -25,31 +25,33 @@ export default {
 
 <template>
   <div v-if="!user">
-    <header class="px-20 pt-8">
+    <header class="px-16 pt-8">
       <h1 class="text-xl">Manage your life like a pro</h1>
     </header>
-    <body class="px-20 pt-6">
+    <body class="px-16 pt-6">
       <p class="pb-2">
         A base for your productivity and well-being. Track and visualize your
         personal finances, health and life stats in one tool.
       </p>
 
       <router-link :to="{ name: 'SignIn' }">
-        <span class="text-dark-light-green">Sign in</span></router-link
+        <span class="text-dark-dark-light-green">Sign in</span></router-link
       >
       or
       <router-link :to="{ name: 'SignUp' }">
-        <span class="text-dark-light-green">
+        <span class="text-dark-dark-light-green">
           create an account</span
         ></router-link
       >
-      to continue.
+      to get started.
+
+      <img class="mt-20 mx-auto" src="../assets/data.svg" width="500" />
     </body>
   </div>
 
   <div v-else>
     <span>
-      <header class="flex px-10 pt-8">
+      <header class="flex px-8 pt-8">
         <h1 class="text-xl">Home</h1>
 
         <div class="flex flex-row justify-end ml-auto">
@@ -65,11 +67,12 @@ export default {
         </div>
       </header>
     </span>
-    <body class="px-10 pt-8">
+    <body class="px-8 pt-8">
       <p>
         <span>Welcome back </span><span class="italic">{{ user.email }}</span>
       </p>
+
+      <img class="mt-20 mx-auto" src="../assets/data.svg" width="500" />
     </body>
   </div>
-  <img class="mt-20 px-10 m-auto" src="../assets/data.svg" width="450" />
 </template>

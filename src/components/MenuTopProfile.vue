@@ -29,7 +29,7 @@ export default {
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
       :to="{ name: 'Profile' }"
     >
-      <Icon icon="mdi:account-check" width="20" />
+      <Icon icon="mdi:account-check-outline" width="20" />
       <p class="ml-1.5">Profile</p>
     </router-link>
 
@@ -38,7 +38,7 @@ export default {
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
       :to="{ name: 'Settings' }"
     >
-      <Icon icon="mdi:cog" width="20" />
+      <Icon icon="mdi:cog-outline" width="20" />
       <p class="ml-1.5">Settings</p>
     </router-link>
 
@@ -46,7 +46,7 @@ export default {
       @click="signOut"
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"
     >
-      <Icon icon="mdi:login" width="20" />
+      <Icon icon="mdi:logout-variant" width="20" />
       <p class="ml-1.5">Sign out</p>
     </button>
   </div>

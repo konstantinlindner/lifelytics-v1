@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <header class="flex px-10 pt-8">
+  <header class="flex px-8 pt-8">
     <h1 class="text-xl">Flights</h1>
     <div class="flex flex-row justify-end ml-auto">
       <div class="flex flex-row items-center ml-5">
@@ -25,8 +25,8 @@ export default {
       </div>
     </div>
   </header>
-  <body class="px-10 pt-8">
+  <body class="px-8 pt-8">
     Below is a table of all flights.
-    <img class="mt-20 m-auto" src="../assets/flights.svg" width="500" />
+    <img class="mt-20 mx-auto" src="../assets/flights.svg" width="500" />
   </body>
 </template>

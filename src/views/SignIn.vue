@@ -97,7 +97,7 @@ export default {
       <div class="flex justify-center">
         <router-link class="text-sm mt-5" :to="{ name: 'SignUp' }"
           >Don't have an account?
-          <span class="text-dark-light-green">Sign up</span></router-link
+          <span class="text-dark-dark-light-green">Sign up</span></router-link
         >
       </div>
     </form>
