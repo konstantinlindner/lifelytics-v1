@@ -20,7 +20,7 @@ export default {
     };
 
     const handleResize = () => {
-      if (window.innerWidth <= 640) {
+      if (window.innerWidth <= 1024) {
         isExpanded.value = false;
       } else {
         isExpanded.value = true;
@@ -135,7 +135,7 @@ export default {
 
     <button
       @click="toggleExpansion"
-      class="mt-auto mb-5 mx-auto hover:bg-light-grey p-2 rounded-full"
+      class="mt-auto mb-5 mx-auto hover:bg-light-green p-2 rounded-full"
     >
       <Icon
         :icon="

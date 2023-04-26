@@ -9,7 +9,7 @@ import Home from "./views/Home.vue";
 import SignUp from "./views/SignUp.vue";
 import MenuSide from "./components/MenuSide.vue";
 import AppLogo from "./components/AppLogo.vue";
-import AddTransaction from "./views/AddTransaction.vue";
+import AddRecord from "./views/AddRecord.vue";
 import Flights from "./views/Flights.vue";
 import Accommodation from "./views/Accommodation.vue";
 
@@ -22,7 +22,7 @@ export default {
     SignUp,
     MenuSide,
     AppLogo,
-    AddTransaction,
+    AddRecord,
     Flights,
     Accommodation,
   },

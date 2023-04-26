@@ -5,113 +5,53 @@ import { computed } from "vue";
 import store from "../store/index.ts";
 import { Icon } from "@iconify/vue";
 
+import AddRecordType from "../components/AddRecordType.vue";
+import AddRecordHealthCategory from "../components/AddRecordHealthCategory.vue";
+import AddRecordFinancialType from "../components/AddRecordFinancialType.vue";
+import AddRecordFinancialExpenseCategory from "../components/AddRecordFinancialExpenseCategory.vue";
+import AddRecordFinancialTransaction from "../components/AddRecordFinancialTransaction.vue";
+
 export default {
   name: "AddRecord",
-  components: { Icon },
+  components: {
+    Icon,
+    AddRecordType,
+    AddRecordHealthCategory,
+    AddRecordFinancialType,
+    AddRecordFinancialExpenseCategory,
+    AddRecordFinancialTransaction,
+  },
   setup() {
     // create data / vars
 
     const router = useRouter();
 
-    // Set user const
-
-    const user = computed(() => store.state.user);
-
-    // If not logged in, redirect to sign in page
-
-    async function redirectNotSignedIn() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
-        router.push({ name: "SignIn" });
-      }
-    }
-
-    redirectNotSignedIn();
-
-    return { user };
+    return {};
   },
 };
 </script>
 
 <template>
-  <div v-if="user" class="px-4 py-4 mx-auto">
-    <div class="min-w-max p-4 bg-light-light-grey rounded-md">
-      <h1 class="text-xl mb-6 flex justify-center">Choose category</h1>
-      <div class="min-w-max grid gap-4 grid-cols-3 rounded-md">
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:cash" width="80" />
-          <h1>Income</h1>
-        </button>
+  <div class="px-4 py-4 mx-auto flex flex-col">
+    <input
+      type="text"
+      value=""
+      placeholder="type something"
+      class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+    />
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:home-city" width="80" />
-          <h1>Accommodation</h1>
-        </button>
+    <p class="mx-auto py-5">or</p>
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:food" width="80" />
-          <h1>Food</h1>
-        </button>
+    <div class="mx-auto max-w-max">
+      <AddRecordType />
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:train-car" width="80" />
-          <h1>Transportation</h1>
-        </button>
+      <!-- <AddRecordFinancialType /> -->
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:flight" width="80" />
-          <h1>Flight</h1>
-        </button>
+      <!-- <AddRecordFinancialExpenseCategory /> -->
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:heart-outline" width="80" />
-          <h1>Health</h1>
-        </button>
+      <!-- <AddRecordFinancialTransaction /> -->
 
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:reload" width="80" />
-          <h1>Subscription</h1>
-        </button>
-
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:finance" width="80" />
-          <h1>Financial</h1>
-        </button>
-
-        <button
-          class="bg-light-grey hover:bg-light-green duration-300 rounded-md w-40 h-40 cursor-pointer flex flex-col items-center justify-center"
-          @click=""
-        >
-          <Icon icon="mdi:sticker-plus-outline" width="80" />
-          <h1>Other</h1>
-        </button>
-      </div>
+      <!-- <AddRecordHealthCategory /> -->
     </div>
   </div>
 </template>

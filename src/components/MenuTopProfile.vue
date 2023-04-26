@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div class="bg-white shadow-lg rounded-md">
+  <div class="bg-white shadow-md border rounded-md">
     <router-link
       @click=""
       class="duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer w-28"

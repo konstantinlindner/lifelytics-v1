@@ -83,7 +83,7 @@ export default {
 
     <form
       @submit.prevent="signUp"
-      class="p-8 flex flex-col bg-light-light-grey rounded-md"
+      class="p-8 flex flex-col border shadow-lg rounded-md"
     >
       <h1 class="text-2xl mx-auto mb-2">Create your account</h1>
       <p class="mx-auto mb-5">It's free and only takes a minute</p>
@@ -93,9 +93,9 @@ export default {
         <input
           type="text"
           required
-          class="rounded-md p-2 focus:outline-none"
           id="firstName"
           v-model="firstName"
+          class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
 
@@ -104,9 +104,9 @@ export default {
         <input
           type="text"
           required
-          class="rounded-md p-2 focus:outline-none"
           id="lastName"
           v-model="lastName"
+          class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
 
@@ -115,9 +115,9 @@ export default {
         <input
           type="text"
           required
-          class="rounded-md p-2 focus:outline-none"
           id="email"
           v-model="email"
+          class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
 
@@ -126,9 +126,9 @@ export default {
         <input
           type="password"
           required
-          class="rounded-md p-2 focus:outline-none"
           id="Password"
           v-model="password"
+          class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
 
@@ -139,9 +139,9 @@ export default {
         <input
           type="password"
           required
-          class="rounded-md p-2 focus:outline-none"
           id="confirmPassword"
           v-model="confirmPassword"
+          class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
       <button

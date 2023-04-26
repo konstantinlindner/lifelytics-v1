@@ -5,7 +5,6 @@ import { computed } from "vue";
 import Home from "../views/Home.vue";
 import SignIn from "../views/SignIn.vue";
 import SignUp from "../views/SignUp.vue";
-import AddTransaction from "../views/AddTransaction.vue";
 import Profile from "../views/Profile.vue";
 import Transactions from "../views/Transactions.vue";
 import Flights from "../views/Flights.vue";
@@ -79,14 +78,7 @@ const routes = [
       title: "Accommodation",
     },
   },
-  {
-    path: "/add-transaction",
-    name: "AddTransaction",
-    component: AddTransaction,
-    meta: {
-      title: "Add transaction",
-    },
-  },
+
   {
     path: "/add-record",
     name: "AddRecord",
