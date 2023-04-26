@@ -3,7 +3,7 @@ import store from "../store/index.ts";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 import AppLogo from "./AppLogo.vue";
-import { ref } from "vue";
+import { ref, onMounted, watch } from "vue";
 
 export default {
   name: "MenuSide",
@@ -11,11 +11,30 @@ export default {
   setup() {
     const user = computed(() => store.state.user);
 
+    // const isExpanded = ref(window.innerWidth >= 640);
+
     const isExpanded = ref(true);
 
     const toggleExpansion = () => {
       isExpanded.value = !isExpanded.value;
     };
+
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        isExpanded.value = false;
+      } else {
+        isExpanded.value = true;
+      }
+    };
+
+    onMounted(() => {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+    });
+
+    watch(user, () => {
+      handleResize();
+    });
 
     return { user, isExpanded, toggleExpansion };
   },

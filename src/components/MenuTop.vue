@@ -73,7 +73,7 @@ export default {
         :to="{ name: 'SignIn' }"
       >
         <Icon icon="mdi:login" width="20" />
-        <p class="ml-1.5">Sign in</p>
+        <p class="ml-1.5 whitespace-nowrap">Sign in</p>
       </router-link>
     </div>
   </div>

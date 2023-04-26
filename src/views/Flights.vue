@@ -20,7 +20,7 @@ export default {
           :to="{ name: 'AddTransaction' }"
         >
           <Icon icon="mdi:plus" width="20" />
-          <p class="ml-1.5">Add flight</p>
+          <p class="ml-1.5 whitespace-nowrap">Add flight</p>
         </router-link>
       </div>
     </div>

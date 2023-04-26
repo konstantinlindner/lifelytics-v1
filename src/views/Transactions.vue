@@ -34,7 +34,7 @@ export default {
           @click="showAppModal"
         >
           <Icon icon="mdi:plus" width="20" />
-          <p class="ml-1.5">Add transaction</p>
+          <p class="ml-1.5 whitespace-nowrap">Add transaction</p>
         </button>
       </div>
     </div>
