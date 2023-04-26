@@ -1,29 +1,12 @@
-<script>
+<script lang="ts">
 import { computed } from "vue";
 import store from "../store/index.ts";
-import { supabase } from "../supabase.ts";
-import { useRouter } from "vue-router";
 
 export default {
   name: "Settings",
   components: {},
   setup() {
     const user = computed(() => store.state.user);
-
-    const router = useRouter();
-
-    // If already logged in, redirect to home
-
-    async function redirectSignedIn() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
-        router.push({ name: "Home" });
-      }
-    }
-
-    redirectSignedIn();
 
     return { user };
   },

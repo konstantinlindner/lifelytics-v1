@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 import { Icon } from "@iconify/vue";
-import { ref, onMounted, watch } from "vue";
+import { ref } from "vue";
 
 export default {
   name: "AddRecordFinancialExpenseCategory",

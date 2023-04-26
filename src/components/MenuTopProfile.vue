@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { Icon } from "@iconify/vue";
 import { supabase } from "../supabase.ts";
 import { useRouter } from "vue-router";

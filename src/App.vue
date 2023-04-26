@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { supabase } from "./supabase.ts";
 import store from "./store/index.ts";
 import { computed } from "vue";

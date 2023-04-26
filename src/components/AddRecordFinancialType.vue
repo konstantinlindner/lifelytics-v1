@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { Icon } from "@iconify/vue";
 import { ref, onMounted, watch } from "vue";
 

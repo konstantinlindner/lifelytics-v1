@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { ref } from "vue";
 import { supabase } from "../supabase.ts";
 import { useRouter } from "vue-router";
@@ -19,8 +19,8 @@ export default {
     const signIn = async () => {
       try {
         const { error } = await supabase.auth.signInWithPassword({
-          email: email.value,
-          password: password.value,
+          email: email.value!,
+          password: password.value!,
         });
         if (error) throw error;
         router.push({ name: "Home" });
@@ -34,19 +34,6 @@ export default {
 
     // Set user const
     const user = computed(() => store.state.user);
-
-    // If already logged in, redirect to home
-
-    async function redirectSignedIn() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) {
-        router.push({ name: "Home" });
-      }
-    }
-
-    redirectSignedIn();
 
     return { email, password, errorMsg, signIn, user };
   },

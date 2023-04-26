@@ -1,7 +1,6 @@
-<script>
+<script lang="ts">
 import store from "../store/index.ts";
 import { computed } from "vue";
-import { supabase } from "../supabase.ts";
 import { Icon } from "@iconify/vue";
 
 export default {
@@ -9,14 +8,6 @@ export default {
   components: { Icon },
   setup() {
     const user = computed(() => store.state.user);
-
-    async function getUserData() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-    }
-
-    getUserData();
 
     return { user };
   },

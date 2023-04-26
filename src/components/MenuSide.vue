@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import store from "../store/index.ts";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
@@ -10,8 +10,6 @@ export default {
   components: { Icon, AppLogo },
   setup() {
     const user = computed(() => store.state.user);
-
-    // const isExpanded = ref(window.innerWidth >= 640);
 
     const isExpanded = ref(true);
 

@@ -1,8 +1,4 @@
-<script>
-import { supabase } from "../supabase.ts";
-import { useRouter } from "vue-router";
-import { computed } from "vue";
-import store from "../store/index.ts";
+<script lang="ts">
 import { Icon } from "@iconify/vue";
 
 import AddRecordType from "../components/AddRecordType.vue";
@@ -21,11 +17,8 @@ export default {
     AddRecordFinancialExpenseCategory,
     AddRecordFinancialTransaction,
   },
+
   setup() {
-    // create data / vars
-
-    const router = useRouter();
-
     return {};
   },
 };
@@ -43,15 +36,15 @@ export default {
     <p class="mx-auto py-5">or</p>
 
     <div class="mx-auto max-w-max">
-      <!-- <AddRecordFinancialExpenseCategory /> -->
-
       <AddRecordType />
 
-      <!-- <AddRecordFinancialType /> -->
+      <AddRecordHealthCategory />
 
-      <!-- <AddRecordFinancialTransaction /> -->
+      <AddRecordFinancialType />
 
-      <!-- <AddRecordHealthCategory /> -->
+      <AddRecordFinancialExpenseCategory />
+
+      <AddRecordFinancialTransaction />
     </div>
   </div>
 </template>

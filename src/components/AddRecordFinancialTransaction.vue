@@ -1,6 +1,5 @@
-<script>
-import store from "../store/index.ts";
-import { computed, ref, onMounted, watch } from "vue";
+<script lang="ts">
+import { ref } from "vue";
 
 export default {
   name: "AddRecordFinancialTransaction",
@@ -9,7 +8,6 @@ export default {
   setup() {
     // create data / vars
 
-    const router = useRouter();
     const name = ref(null);
     const amount = ref(null);
     const errorMsg = ref(null);
@@ -18,7 +16,6 @@ export default {
       name,
       amount,
       errorMsg,
-      user,
     };
   },
 };

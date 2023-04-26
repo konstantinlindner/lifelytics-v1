@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { Icon } from "@iconify/vue";
 import { ref, onMounted, watch } from "vue";
 
@@ -26,18 +26,7 @@ export default {
     },
   },
   setup() {
-    const button1 = ref(false);
-    const button2 = ref(false);
-
-    const toggleButton1 = () => {
-      button1.value = !button1.value;
-    };
-
-    const toggleButton2 = () => {
-      button2.value = !button2.value;
-    };
-
-    return { button1, button2, toggleButton1, toggleButton2 };
+    return {};
   },
 };
 </script>
@@ -51,7 +40,7 @@ export default {
     >
       <button
         class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
-        @click="toggleButton1"
+        @click="goToHealth"
       >
         <p class="text-sm absolute top-2 left-3">1</p>
         <Icon class="mx-auto" icon="mdi:heart" width="80" />
@@ -60,7 +49,7 @@ export default {
 
       <button
         class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
-        @click="toggleButton2"
+        @click="goToFinancial"
       >
         <p class="text-sm absolute top-2 left-3">2</p>
         <Icon class="mx-auto" icon="mdi:money" width="80" />
