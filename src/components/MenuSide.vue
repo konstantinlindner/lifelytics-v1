@@ -107,28 +107,28 @@ export default {
           class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
           :to="{ name: 'Home' }"
         >
-          <Icon icon="mdi:home" width="30" />
+          <Icon icon="mdi:home" width="25" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
           :to="{ name: 'Transactions' }"
         >
-          <Icon icon="mdi:cash" width="30" />
+          <Icon icon="mdi:cash" width="25" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
           :to="{ name: 'Flights' }"
         >
-          <Icon icon="mdi:airplane" width="30" />
+          <Icon icon="mdi:airplane" width="25" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-green rounded-md px-2 py-1 m-auto cursor-pointer"
           :to="{ name: 'Accommodation' }"
         >
-          <Icon icon="mdi:home-city" width="30" />
+          <Icon icon="mdi:home-city" width="25" />
         </router-link>
       </nav>
     </div>
