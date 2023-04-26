@@ -47,7 +47,7 @@ export default {
 <template>
   <div v-if="user" class="flex flex-col h-screen border-r">
     <div v-if="isExpanded">
-      <div class="flex justify-center item-center h-24 w-72">
+      <div class="flex justify-center item-center h-24 w-64">
         <AppLogo />
       </div>
       <nav>
@@ -133,7 +133,10 @@ export default {
       </nav>
     </div>
 
-    <button @click="toggleExpansion" class="mt-auto mb-5 mx-auto">
+    <button
+      @click="toggleExpansion"
+      class="mt-auto mb-5 mx-auto hover:bg-light-grey p-2 rounded-full"
+    >
       <Icon
         :icon="
           isExpanded

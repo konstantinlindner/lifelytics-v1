@@ -55,7 +55,7 @@ export default {
   </div> -->
 
   <div v-if="!user" class="flex">
-    <AppLogo class="h-24 w-72" />
+    <AppLogo class="h-24 w-64" />
 
     <div class="flex ml-auto mr-8 my-auto">
       <router-link
