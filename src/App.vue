@@ -1,8 +1,8 @@
 <script>
 import { supabase } from "./supabase.ts";
 import store from "./store/index.ts";
-
 import { computed } from "vue";
+
 import MenuTop from "./components/MenuTop.vue";
 import SignIn from "./views/SignIn.vue";
 import Home from "./views/Home.vue";
@@ -14,6 +14,7 @@ import Flights from "./views/Flights.vue";
 import Accommodation from "./views/Accommodation.vue";
 
 export default {
+  name: "App",
   components: {
     MenuTop,
     Home,
