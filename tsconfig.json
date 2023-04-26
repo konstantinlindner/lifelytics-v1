@@ -1,19 +1,57 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    "resolveJsonModule": true,
+
     "strict": true,
-    "moduleResolution": "node",
+
+    // Required in Vue projects
+    "jsx": "preserve",
+
+    // Enforce using `import type` instead of `import` for types
+    "verbatimModuleSyntax": true,
+
+    // Recommended
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // See <https://github.com/vuejs/vue-cli/pull/5688>
+    "skipLibCheck": true,
+
     "importHelpers": true,
+    "experimentalDecorators": true,
+    "strictFunctionTypes": false,
+
     "isolatedModules": true,
-    "noEmit": true
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "allowJs": false,
+
+    "lib": ["dom", "esnext"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@build/*": ["build/*"]
+    },
+    "types": [
+      "node",
+      "vite/client",
+      "element-plus/global",
+      "@pureadmin/table/volar",
+      "@pureadmin/descriptions/volar",
+      "unplugin-vue-define-options/macros-global"
+    ],
+    "typeRoots": ["./node_modules/@types/", "./types"]
   },
   "include": [
+    "mock/*.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "types/*.d.ts",
+    "vite.config.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }
