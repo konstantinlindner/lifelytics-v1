@@ -4,9 +4,20 @@ This is the repository for lifelytics - a tool for tracking personal finances, h
 
 ## Stack
 
-Language: Typescript
-JS framework: Vue.js
-CSS framework: TailwindCSS
-Build tool: Vite
-Icons: Iconify
+Language: Typescript  
+Framework: Vue.js  
+CSS: TailwindCSS  
+Build tool: Vite  
+Icons: Iconify  
 Backend, auth and DB: Supabase
+
+## Setup
+
+Prequisits: node 14, npm.
+
+Clone and enter the project.
+
+```bash
+$ npm install
+$ npm run dev # serves at localhost:5173
+```
