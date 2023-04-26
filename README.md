@@ -15,7 +15,7 @@ Backend, auth and DB: Supabase
 
 Prerequisites: node 14, npm.
 
-Clone and enter the project.
+Clone and enter the project, then run:
 
 ```bash
 $ npm install
