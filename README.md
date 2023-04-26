@@ -13,7 +13,7 @@ Backend, auth and DB: Supabase
 
 ## Setup
 
-Prequisits: node 14, npm.
+Prerequisites: node 14, npm.
 
 Clone and enter the project.
 
