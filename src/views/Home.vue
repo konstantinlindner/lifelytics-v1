@@ -57,7 +57,7 @@ export default {
         <div class="flex flex-row justify-end ml-auto">
           <div class="flex flex-row items-center ml-5">
             <router-link
-              class="bg-light-light-green duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+              class="bg-light-green duration-300 hover:bg-dark-light-green active:bg-dark-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
               :to="{ name: 'AddRecord' }"
             >
               <Icon icon="mdi:plus" width="20" />

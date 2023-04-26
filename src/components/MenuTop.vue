@@ -71,7 +71,7 @@ export default {
     <div class="flex ml-auto mr-8 my-auto space-x-1">
       <router-link
         v-if="!user"
-        class="w-fit duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+        class="w-fit duration-300 hover:bg-light-green active:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
         :to="{ name: 'Home' }"
       >
         <Icon icon="mdi:home-outline" width="20" />
@@ -80,7 +80,7 @@ export default {
 
       <router-link
         v-if="!user"
-        class="w-fit duration-300 hover:bg-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+        class="w-fit duration-300 hover:bg-light-green active:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
         :to="{ name: 'SignIn' }"
       >
         <Icon icon="mdi:login-variant" width="20" />

@@ -50,7 +50,7 @@ export default {
       class="min-w-max grid gap-4 grid-cols-2 rounded-md"
     >
       <button
-        class="relative border bg-light-light-grey hover:bg-light-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
+        class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
         @click="toggleButton1"
       >
         <p class="text-sm absolute top-2 left-3">1</p>
@@ -59,7 +59,7 @@ export default {
       </button>
 
       <button
-        class="relative border bg-light-light-grey hover:bg-light-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
+        class="relative border bg-light-light-grey hover:bg-light-green active:bg-dark-light-green duration-300 rounded-md w-40 h-40 cursor-pointer"
         @click="toggleButton2"
       >
         <p class="text-sm absolute top-2 left-3">2</p>

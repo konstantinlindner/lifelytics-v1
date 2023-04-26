@@ -33,7 +33,7 @@ export default {
             <li class="ml-auto list-none mx-3 my-2">
               <div class="flex flex-row items-center">
                 <button
-                  class="bg-light-green duration-300 hover:bg-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+                  class="bg-light-green duration-300 hover:bg-dark-light-green active:bg-dark-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
                   @click="close"
                 >
                   <p>Confirm</p>
