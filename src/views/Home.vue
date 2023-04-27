@@ -9,7 +9,7 @@ export default {
   setup() {
     const user = computed(() => store.state.user);
 
-    return { user: {} as User };
+    return { user };
   },
 };
 </script>
