@@ -16,7 +16,7 @@ export default {
     const email = ref(null);
     const password = ref(null);
     const confirmPassword = ref(null);
-    const errorMsg = ref<string | null>(null);
+    const errorMsg = ref(null);
 
     // signUp function
 
@@ -24,8 +24,8 @@ export default {
       if (password.value === confirmPassword.value) {
         try {
           const { error } = await supabase.auth.signUp({
-            email: email.value!,
-            password: password.value!,
+            email: email.value,
+            password: password.value,
           });
           if (error) throw error;
           router.push({ name: "SignIn" });
@@ -50,6 +50,7 @@ export default {
       lastName,
       email,
       password,
+      confirmPassword,
       errorMsg,
       signUp,
       user,
@@ -60,12 +61,6 @@ export default {
 
 <template>
   <div v-if="!user" class="w-96 mx-auto py-10">
-    <!-- Error Handling -->
-
-    <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-light-grey">
-      <p class="text-red-500">{{ errorMsg }}</p>
-    </div>
-
     <!-- signUp -->
 
     <form
@@ -131,6 +126,12 @@ export default {
           class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm placeholder-slate-400 focus:outline-none hover:border-light-green hover:ring-1 hover:ring-light-green focus:border-light-green focus:ring-1 focus:ring-light-green disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
         />
       </div>
+
+      <!-- Error Handling -->
+      <div v-if="errorMsg" class="mx-auto">
+        <p class="text-red-500 mt-3">{{ errorMsg }}</p>
+      </div>
+
       <button
         type="submit"
         class="min-w-full mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-300 hover:bg-dark-light-green active:bg-dark-dark-light-green mb-4"
