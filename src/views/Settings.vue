@@ -20,5 +20,7 @@ export default {
     <p>ID: {{ user.id }}</p>
     <p>Email: {{ user.email }}</p>
     <p>Phone: {{ user.phone }}</p>
+    <br />
+    <p>Connect to Apple Health</p>
   </div>
 </template>

@@ -9,8 +9,14 @@ import Profile from "../views/Profile.vue";
 import Transactions from "../views/Transactions.vue";
 import Flights from "../views/Flights.vue";
 import Accommodation from "../views/Accommodation.vue";
-import AddRecord from "../views/AddRecord.vue";
 import Settings from "../views/Settings.vue";
+
+import AddRecord from "../views/AddRecord.vue";
+import AddRecordFinancial from "../views/AddRecordFinancial.vue";
+import AddRecordFinancialExpense from "../views/AddRecordFinancialExpense.vue";
+import AddRecordFinancialIncome from "../views/AddRecordFinancialIncome.vue";
+import AddRecordFinancialDetails from "../views/AddRecordFinancialDetails.vue";
+import AddRecordHealth from "../views/AddRecordHealth.vue";
 
 const routes = [
   {
@@ -85,6 +91,47 @@ const routes = [
     component: AddRecord,
     meta: {
       title: "Add record",
+    },
+  },
+  {
+    path: "/add-record/health",
+    name: "AddRecordHealth",
+    component: AddRecordHealth,
+    meta: {
+      title: "Add health record",
+    },
+  },
+  {
+    path: "/add-record/financial",
+    name: "AddRecordFinancial",
+    component: AddRecordFinancial,
+    meta: {
+      title: "Add financial record",
+    },
+  },
+  {
+    path: "/add-record/financial/income",
+    name: "AddRecordFinancialIncome",
+    component: AddRecordFinancialIncome,
+    meta: {
+      title: "Add income record",
+    },
+  },
+  {
+    path: "/add-record/financial/expense",
+    name: "AddRecordFinancialExpense",
+    component: AddRecordFinancialExpense,
+    meta: {
+      title: "Add expense record",
+    },
+  },
+
+  {
+    path: "/add-record/financial/details",
+    name: "AddRecordFinancialDetails",
+    component: AddRecordFinancialDetails,
+    meta: {
+      title: "Add transaction",
     },
   },
 ];

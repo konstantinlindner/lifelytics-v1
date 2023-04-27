@@ -2,6 +2,7 @@
 import store from "../store/index.ts";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
+import DailyLog from "../components/DailyLog.vue";
 
 export default {
   name: "Home",
@@ -62,6 +63,8 @@ export default {
       <p>
         <span>Welcome back </span><span class="italic">{{ user.email }}</span>
       </p>
+
+      <DailyLog />
 
       <img class="mt-20 mx-auto" src="../assets/data.svg" width="500" />
     </body>
