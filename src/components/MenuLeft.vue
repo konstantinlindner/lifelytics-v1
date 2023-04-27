@@ -6,7 +6,7 @@ import AppLogo from "./AppLogo.vue";
 import { ref, onMounted, watch } from "vue";
 
 export default {
-  name: "MenuSide",
+  name: "MenuLeft",
   components: { Icon, AppLogo },
   setup() {
     const user = computed(() => store.state.user);
@@ -105,28 +105,28 @@ export default {
           class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Home' }"
         >
-          <Icon icon="mdi:home-outline" width="25" />
+          <Icon icon="mdi:home-outline" width="20" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Transactions' }"
         >
-          <Icon icon="mdi:playlist-edit" width="25" />
+          <Icon icon="mdi:playlist-edit" width="20" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Flights' }"
         >
-          <Icon icon="mdi:airplane-takeoff" width="25" />
+          <Icon icon="mdi:airplane-takeoff" width="20" />
         </router-link>
 
         <router-link
           class="duration-300 hover:bg-light-grey rounded-full p-2 mx-auto cursor-pointer"
           :to="{ name: 'Accommodation' }"
         >
-          <Icon icon="mdi:bed-queen-outline" width="25" />
+          <Icon icon="mdi:bed-queen-outline" width="20" />
         </router-link>
       </nav>
     </div>
@@ -137,11 +137,7 @@ export default {
     >
       <Icon
         width="20"
-        :icon="
-          isExpanded
-            ? 'material-symbols:arrow-back-ios-new-rounded'
-            : 'material-symbols:arrow-forward-ios-rounded'
-        "
+        :icon="isExpanded ? 'mdi:chevron-left' : 'mdi:chevron-right'"
       />
     </button>
   </div>

@@ -7,7 +7,7 @@ import MenuTop from "./components/MenuTop.vue";
 import SignIn from "./views/SignIn.vue";
 import Home from "./views/Home.vue";
 import SignUp from "./views/SignUp.vue";
-import MenuSide from "./components/MenuSide.vue";
+import MenuLeft from "./components/MenuLeft.vue";
 import AppLogo from "./components/AppLogo.vue";
 import AddRecord from "./views/AddRecord.vue";
 import Flights from "./views/Flights.vue";
@@ -20,7 +20,7 @@ export default {
     Home,
     SignIn,
     SignUp,
-    MenuSide,
+    MenuLeft,
     AppLogo,
     AddRecord,
     Flights,
@@ -53,7 +53,7 @@ export default {
 
 <template>
   <div class="font-Roboto box-border flex h-screen w-screen">
-    <MenuSide />
+    <MenuLeft />
 
     <div class="flex flex-col w-screen">
       <MenuTop />
