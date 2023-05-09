@@ -68,7 +68,17 @@ export default {
               :to="{ name: 'Transactions' }"
             >
               <Icon icon="mdi:playlist-edit" width="20" />
-              <p class="ml-1.5">Transactions</p>
+              <p class="ml-1.5">Data</p>
+            </router-link>
+          </li>
+
+          <li class="flex flex-row items-center">
+            <router-link
+              class="duration-300 hover:bg-light-grey rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
+              :to="{ name: 'Transactions' }"
+            >
+              <Icon icon="mdi:cash" width="20" />
+              <p class="ml-1.5">Economics</p>
             </router-link>
           </li>
 

@@ -82,7 +82,7 @@ export default {
 
         <button
           type="submit"
-          class="mt-6 py-2 px-6 rounded-md self-start text-sm bg-light-green duration-200 hover:bg-dark-light-green mb-4"
+          class="mt-6 py-2 px-6 rounded-md ml-auto text-sm bg-light-green duration-200 hover:bg-dark-light-green"
         >
           Next
         </button>

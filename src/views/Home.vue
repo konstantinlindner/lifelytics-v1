@@ -6,7 +6,7 @@ import DailyLog from "../components/DailyLog.vue";
 
 export default {
   name: "Home",
-  components: { Icon },
+  components: { Icon, DailyLog },
   setup() {
     const user = computed(() => store.state.user);
 
@@ -47,7 +47,7 @@ export default {
         <h1 class="text-xl">Home</h1>
 
         <div class="flex flex-row justify-end ml-auto">
-          <div class="flex flex-row items-center ml-5">
+          <div class="flex flex-row items-center">
             <router-link
               class="bg-light-green duration-300 hover:bg-dark-light-green active:bg-dark-dark-light-green rounded-md px-2 py-1 flex flex-row items-center cursor-pointer"
               :to="{ name: 'AddRecord' }"
@@ -60,11 +60,7 @@ export default {
       </header>
     </span>
     <body class="px-8 pt-8">
-      <p>
-        <span>Welcome back </span><span class="italic">{{ user.email }}</span>
-      </p>
-
-      <DailyLog />
+      <DailyLog class="mt-4" />
 
       <img class="mt-20 mx-auto" src="../assets/data.svg" width="500" />
     </body>
